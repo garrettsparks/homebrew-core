@@ -3,18 +3,18 @@ class YtDlp < Formula
 
   desc "Fork of youtube-dl with additional features and fixes"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/31/05/4ad72bb6abca733af67eaf60c1c3a3dfb753ab423b904a137504ee60d44a/yt-dlp-2023.1.6.tar.gz"
-  sha256 "3a783a36751ced16368f40b3ba865ab39b30689ed8056f1ee2346aa3839a0b0f"
+  url "https://files.pythonhosted.org/packages/e8/4a/1e01f24fcb49191626e2b17d00e13a093315d03a9da09fccb1c75913e420/yt-dlp-2023.3.4.tar.gz"
+  sha256 "265d5da97a76c15d7d9a4088a67b78acd5dcf6f8cfd8257c52f581ff996ff515"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "414b129dbc5ba8c905c1f373c875dee7a6334f867ebc0182207c46f45803226d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0afddc6ed78cc1ef4f4633562bac5158282b4c95d4bd5597b56e48945e8e50fa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "962362e5319f49b4fddf969c2e0c5151a7e95990734c0e74655dfc4e801979b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc72bfcc9e321dc62b334d85eb6862dc0ce3650a9916e1f00022cdf4434cd47f"
-    sha256 cellar: :any_skip_relocation, monterey:       "84cc8095be4b8e07eb01a78231359c1b79f9779bb097c0b7ed10d8829185a69e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "17d741f6af8fed1c762222ea81e642fb34dc8529c6c7e428f72387efc55c0688"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2fc58f22f8adf6852b9f5c0d9fec1962967f0d8bbcf21b2c9db4f4c2017240a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a0e990cd6d8e33ed7abcde743b0c121705656315f724b4b4e83ab9976da28bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25240328295fbb5bdb9bb086af1471b71faaabfea54ea403f1b576af9c17df7f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92a2c79978a05d73831c240ec82b96a99b2a6480ca7276fcc2f7ceff45fa74a2"
+    sha256 cellar: :any_skip_relocation, ventura:        "fcdc5c7a4aa821cd8712eb3745e93b887741c56208b7f4a1ab4886d3a3c1bd19"
+    sha256 cellar: :any_skip_relocation, monterey:       "e4a404c9dfa604bd45d9cebf09819892d0fcaeb0629064ddf4ba56a5aac9184a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "16a7b619b2b0e0512ac7246a881479f092a9d70facefd42dd32bb65fa96aa585"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e60629a7a90a3c0cbb097b86c49d231ee8955efb24f1696a275e2ab4833034f3"
   end
 
   head do
@@ -40,8 +40,8 @@ class YtDlp < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/5d/22/575c7dd7c86843e07a791cfa2143e7292d6b380f5a7cce966a49b9d6c9f4/pycryptodomex-3.16.0.tar.gz"
-    sha256 "e9ba9d8ed638733c9e95664470b71d624a6def149e2db6cc52c1aca5a6a2df1d"
+    url "https://files.pythonhosted.org/packages/3d/07/cfd8f52b9068877801317d26dc7225e19421bc659e1395d2cd6933b1a351/pycryptodomex-3.17.tar.gz"
+    sha256 "0af93aad8d62e810247beedef0261c148790c52f3cd33643791cc6396dd217c1"
   end
 
   resource "websockets" do

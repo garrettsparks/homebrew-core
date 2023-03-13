@@ -3,40 +3,37 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-28.15.4.tgz"
-  sha256 "486ebbd3a3fcd7c821150c1300638953d6c55cc5495b2ba5da4547ef77fd3798"
+  url "https://registry.npmjs.org/vercel/-/vercel-28.16.15.tgz"
+  sha256 "f0287570511d9f5c59504eb45b14b4893b89502a4552c7fadf7ae2362d72d1e4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c11efa11b711ea628ce310168e41539af266573de0e1ea8d43c2ec23077df4b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c11efa11b711ea628ce310168e41539af266573de0e1ea8d43c2ec23077df4b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c11efa11b711ea628ce310168e41539af266573de0e1ea8d43c2ec23077df4b"
-    sha256 cellar: :any_skip_relocation, ventura:        "6127f6d93eec73d5e8f27f065de54031b05a91068c7510232b3a6bdb13f72b6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "6127f6d93eec73d5e8f27f065de54031b05a91068c7510232b3a6bdb13f72b6e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6127f6d93eec73d5e8f27f065de54031b05a91068c7510232b3a6bdb13f72b6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31d1e721e3871c8b836404d461d5530dbe8b8e5c9d5df9e4c164063cf9936a81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3690fe79fa63800b588d66e98bd82a01bc4adb1cdf798419c135e35b3e0e2a1a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1aa9a566d58e4d60f0d993b5fdc2708b63ccae825cff659e60a6703ea1086310"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f540a692d7eef5014b73fb16bb963a477fe0163e9eba6c0f7a62abf2d519acc"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb7676c09d3b159267bce92d98e74abc63b909347d2f228a62b9ea3a8d05f080"
+    sha256 cellar: :any_skip_relocation, monterey:       "8fb07423e9083476a2b73c9e3d4c9c67872a9548f8cd8eb41aa9d7b5c1f43706"
+    sha256 cellar: :any_skip_relocation, big_sur:        "714ba7ab9daf5cf587da0bb1195d3494473696c8cad507fecf2991abead14dfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6f7e7133e0b7ee2f79d0ae0874d82d99a6517033ff146b00285d1ce2f893ff6"
   end
 
   depends_on "node"
 
-  on_macos do
-    depends_on "macos-term-size"
-  end
-
   def install
-    rm Dir["dist/{*.exe,xsel}"]
     inreplace "dist/index.js", "= getUpdateCommand",
                                "= async()=>'brew upgrade vercel-cli'"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
-    dist_dir = libexec/"lib/node_modules/vercel/dist"
-    rm_rf dist_dir/"term-size"
+    # Remove incompatible deasync modules
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/vercel/node_modules"
+    node_modules.glob("deasync/bin/*")
+                .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
-    if OS.mac?
-      # Replace the vendored pre-built term-size with one we build ourselves
-      ln_sf (Formula["macos-term-size"].opt_bin/"term-size").relative_path_from(dist_dir), dist_dir
-    end
+    # Replace universal binaries with native slices
+    deuniversalize_machos
   end
 
   test do

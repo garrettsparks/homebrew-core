@@ -1,19 +1,19 @@
 class Terramate < Formula
   desc "Managing Terraform stacks with change detections and code generations"
   homepage "https://github.com/mineiros-io/terramate"
-  url "https://github.com/mineiros-io/terramate/archive/refs/tags/v0.2.11.tar.gz"
-  sha256 "ddeb56579bd8cac2c207f6db84da221ce49d047362a4bbe01393112feda435c8"
+  url "https://github.com/mineiros-io/terramate/archive/refs/tags/v0.2.14.tar.gz"
+  sha256 "aedcdae37d1e6d761c587d4cf4fb5ae4742f52ef0c69f176e77362bd50f77af9"
   license "Apache-2.0"
   head "https://github.com/mineiros-io/terramate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ba58537072def697abf086ef5a2b65ebddc9c42d874d25584d2aac2b9f98785"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "197505705a4b5d38e37160d4eb5f5cb70a04674abe37f1aee50f91af7a23537f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cecc5b3bfb43961a15155d67b9a6aab8fc87b328d6d4d39daa47fa1883a5f97e"
-    sha256 cellar: :any_skip_relocation, ventura:        "8704be78b6b9f45f6824a640491a5c72ad29e85593d767de9837d43ee2efeb9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "67443cd7e1996f90651943a500df26b96dde190cc3fcf692c7e05d924ce01a54"
-    sha256 cellar: :any_skip_relocation, big_sur:        "695a3af1cd99a61db1d7d30c5e18997c2d5e3d6a48b0a0c6b8e65f98927d74e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4322e06aa814aa2b755c1ec8f62b200336b5af7b199e104b521c5817b44802db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cf0ac3a02b755ac3b12875ccf3aaf5effcc3a586495b0aa1b68386e79b88698"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cf0ac3a02b755ac3b12875ccf3aaf5effcc3a586495b0aa1b68386e79b88698"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1cf0ac3a02b755ac3b12875ccf3aaf5effcc3a586495b0aa1b68386e79b88698"
+    sha256 cellar: :any_skip_relocation, ventura:        "abced10b45bd5558ae41eaa3bd3c936b21c64d57de4b725dc22d3693eca5436c"
+    sha256 cellar: :any_skip_relocation, monterey:       "abced10b45bd5558ae41eaa3bd3c936b21c64d57de4b725dc22d3693eca5436c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "abced10b45bd5558ae41eaa3bd3c936b21c64d57de4b725dc22d3693eca5436c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04d315dc3655acc50c7f16e62a38e6a30ea71e23ccded2b897844a87fd3749c9"
   end
 
   depends_on "go" => :build

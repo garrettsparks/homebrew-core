@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://github.com/google/libphonenumber/archive/v8.13.6.tar.gz"
-  sha256 "5c27ee33739981f87d77d1525a59a1358aebea045fea8cc00540662fcae8f62c"
+  url "https://github.com/google/libphonenumber/archive/v8.13.7.tar.gz"
+  sha256 "b51fca02fbc8dcb376ffb5d18c8fa8d91646680c7c6b445acfa8207d82a5b570"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1686e15fa9b13f04b4acf07b0b8af959616d82d2bebb4df412de495511a2312d"
-    sha256 cellar: :any,                 arm64_monterey: "9bfb9c2c28bd7239fe3598ff490a4cd954f9f5e0d85f72c6a55aa5c000969078"
-    sha256 cellar: :any,                 arm64_big_sur:  "48cf9d2dca78d4a62881eeb8f6e8527ef225c38f770c947937d88eeee13b0027"
-    sha256 cellar: :any,                 ventura:        "4b8914d759f99ee174ce058ccbaba658005deb7a6e0edc9b6feaa0785bcfbc98"
-    sha256 cellar: :any,                 monterey:       "2b0f5099053b1134dae7db94e0ce2c5a785e1c78b97c1178a3d1b8be4df56c20"
-    sha256 cellar: :any,                 big_sur:        "77ad335c37d443ca07940669e4e79254ae8e09a2cbd8365d41cba0c9db07ec38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33e7a33e644f20f4d1982f6ce8c82f0c07186965ccf674204287d8d6dfe28623"
+    sha256 cellar: :any,                 arm64_ventura:  "8661066636d48ee07c3d681f3684a863e37952e8bf1ffde16053b2c341c061df"
+    sha256 cellar: :any,                 arm64_monterey: "a677684bbb0266b44ca52aeb06dc4b37ba9daf5fb2140a047c25956856859b27"
+    sha256 cellar: :any,                 arm64_big_sur:  "2d5e024228c5db25a614cfbbfc8598ad730c84a25834c63005e1bb18f2a5bb9f"
+    sha256 cellar: :any,                 ventura:        "7605b32f200aa731ec6ce99ccc40760e8e0a593d76f88a9366f90067b8a61cd3"
+    sha256 cellar: :any,                 monterey:       "7ebb19999cca26cef01f84fe926f8a75e87a4178c27153f83997f9983233e6ce"
+    sha256 cellar: :any,                 big_sur:        "45321b13a3b274b9e4e2d01652e2b5f95463da62b9bd1257b1e2d1c8b2fc6e21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65b6ad4a580a541b1ece2a991b810b9315d479082909f6a91a7462bb0f9fc908"
   end
 
   depends_on "cmake" => :build
@@ -30,6 +30,8 @@ class Libphonenumber < Formula
   depends_on "re2"
 
   fails_with gcc: "5" # For abseil and C++17
+
+  patch :DATA
 
   def install
     ENV.append_to_cflags "-Wno-sign-compare" # Avoid build failure on Linux.
@@ -68,3 +70,35 @@ class Libphonenumber < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/cpp/CMakeLists.txt b/cpp/CMakeLists.txt
+index d2d111d..5b7d2b2 100644
+--- a/cpp/CMakeLists.txt
++++ b/cpp/CMakeLists.txt
+@@ -19,8 +19,8 @@ cmake_minimum_required (VERSION 3.11)
+ project (libphonenumber VERSION 8.13.0)
+
+ # Pick the C++ standard to compile with.
+-# Abseil currently supports C++11, C++14, and C++17.
+-set(CMAKE_CXX_STANDARD 11 CACHE STRING "C++ standard used to compile this project")
++# Abseil currently supports C++14, and C++17.
++set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard used to compile this project")
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
+
+diff --git a/tools/cpp/CMakeLists.txt b/tools/cpp/CMakeLists.txt
+index 91c9052..ae8db75 100644
+--- a/tools/cpp/CMakeLists.txt
++++ b/tools/cpp/CMakeLists.txt
+@@ -17,8 +17,8 @@
+ cmake_minimum_required (VERSION 3.11)
+
+ # Pick the C++ standard to compile with.
+-# Abseil currently supports C++11, C++14, and C++17.
+-set(CMAKE_CXX_STANDARD 11)
++# Abseil currently supports C++14, and C++17.
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+ project (generate_geocoding_data)

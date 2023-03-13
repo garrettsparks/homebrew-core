@@ -1,17 +1,17 @@
 class GradleAT7 < Formula
   desc "Open-source build automation tool based on the Groovy and Kotlin DSL"
   homepage "https://www.gradle.org/"
-  url "https://services.gradle.org/distributions/gradle-7.6-all.zip"
-  sha256 "312eb12875e1747e05c2f81a4789902d7e4ec5defbd1eefeaccc08acf096505d"
+  url "https://services.gradle.org/distributions/gradle-7.6.1-all.zip"
+  sha256 "518a863631feb7452b8f1b3dc2aaee5f388355cc3421bbd0275fbeadd77e84b2"
   license "Apache-2.0"
 
   livecheck do
-    url "https://gradle.org/install/"
-    regex(/href=.*?gradle[._-]v?(\d+(?:\.\d+)+)-all\.(?:zip|t)/i)
+    url "https://gradle.org/releases/"
+    regex(/href=.*?gradle[._-]v?(7(?:\.\d+)+)-all\.(?:zip|t)/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8d62d254f3578c6a50b0578ee96584b84a42cdc50086c71eb73bbbb7acfa83c6"
+    sha256 cellar: :any_skip_relocation, all: "f9d5fc4303991482505708d4b7488160859cd29c0739ab89370f4fb4b218cd0d"
   end
 
   keg_only :versioned_formula

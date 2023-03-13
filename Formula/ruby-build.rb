@@ -1,19 +1,13 @@
 class RubyBuild < Formula
   desc "Install various Ruby versions and implementations"
   homepage "https://github.com/rbenv/ruby-build"
-  url "https://github.com/rbenv/ruby-build/archive/v20230208.1.tar.gz"
-  sha256 "c4fca40b3a4646a9295c8d5e8b0535a194ae45228c326629e1455b8a87697c6d"
+  url "https://github.com/rbenv/ruby-build/archive/v20230309.tar.gz"
+  sha256 "1f7f83c8cf15855a98c8ca75f536ac8778639f203aebd3866831e270b8a130ac"
   license "MIT"
   head "https://github.com/rbenv/ruby-build.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "949900a35df43a7aacab78bf973a6a5da38aee4e21e2d0e9180f52487f65dad5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "560dea6e6df04bcc55fd7f4dde5bd6dd3529bbe325cf534c43a066165cc0c889"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "059e85d4e66bfd4d85e46ab86ce0fbf2bc832d015aa081855f35e073001cb4e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "4163f52bae37a6dd9656b6e48e7b69222fd7900671700ed0b89a18ea7f192af7"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b7a88cb0c352dcd6d9824ac5265e299fad5e4737e22da0b69bfc462647abca1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "37e968fad896c0fef4b608457207f0b6ee670cd16ba89c0519692fce9ecfd047"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02416bdee3d58c3de48184676847fdb7c4356332c1a6b3df752c361798783921"
+    sha256 cellar: :any_skip_relocation, all: "fb7f9f3a156e66770a3076857acc766666162c7eec80051a5aec2904ff1b3d58"
   end
 
   depends_on "autoconf"
@@ -34,7 +28,7 @@ class RubyBuild < Formula
       ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded.
 
       To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
-      to your #{shell_profile}:
+      to your shell profile e.g. ~/.profile or ~/.zshrc:
         export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
       Note: this may interfere with building old versions of Ruby (e.g <2.4) that use

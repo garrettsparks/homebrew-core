@@ -1,13 +1,13 @@
 class Geometry < Formula
   desc "Minimal, fully customizable and composable zsh prompt theme"
   homepage "https://github.com/geometry-zsh/geometry"
-  url "https://github.com/geometry-zsh/geometry/archive/v2.0.0.tar.gz"
-  sha256 "47c9fd345e5e8f093ae735a91fe5a9a9a6e3c1873eab220a7846a17b8405de02"
+  url "https://github.com/geometry-zsh/geometry/archive/v2.2.0.tar.gz"
+  sha256 "2ffe63fbe83813e368933d2add79b7f6439c7ade4fcc8243cb0166c17178cd9a"
   license "ISC"
   head "https://github.com/geometry-zsh/geometry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "77440678fe53ba93dabb7fce6d5e5dac1685d9ed2e6612c62ad136245981136f"
+    sha256 cellar: :any_skip_relocation, all: "fb4186111a4ac55abbf13a80026f3d8de8c1f53fb505ceb9ff9d186fb2539c8d"
   end
 
   depends_on "zsh-async"

@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/b7/f7/5ce89c0ad87a8366904bb29b518dfab2bcabc84552cd226410be43a1fcef/schemathesis-3.18.3.tar.gz"
-  sha256 "cda025cb0a60a284ba13476dc5d07786e8369a8ec6b076fc50fe7904be0a8eb9"
+  url "https://files.pythonhosted.org/packages/66/c5/3aef5397457f49cd04935b056171185a394565d6edaf20c232484095be17/schemathesis-3.18.5.tar.gz"
+  sha256 "56d0d292b0a36c781154c5f9eb3c8bd64d5396f76be9f3f9f3b3121952ffc901"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96e45370c52beafa71a691be903547b4741e40b9085d6005efad8ca62b76d823"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef6b76cf65cdeeeca65e7ce83cea100df02d3c1e3027ae57d460ea5b877ae63b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4493f8cb91bb398e2ba80de8febd6ef013fabf157c3df785dcc8c0e35d0b4d30"
-    sha256 cellar: :any_skip_relocation, ventura:        "016a970536f7e1f4e27cfc06bc3b1704781efb9dc7730d637b813e200d7b8b4b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0adf64a2b8f571861066cc8b1899e5bfe1da749034faf6ac16cb9e5b0e4f5ef4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2acc453a1648df8387880058249db5d4168da047f1c76f37c346bd58afd50609"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "699dd96ee429ec4b225a113d1b81457ff563b6eb51c793a595e56f1b0da3f338"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05071edc67c5a79b496ff34f359b3db1e83cc3979bfd53715e4968db3793eef6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e264cc74083aea28fd33389cf0bba480c23132865f88cb2f12b8db03620610bf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51649d81bd2ddf52cf652903e557c880591f1fe5e0862dc40346a61bc3c71f45"
+    sha256 cellar: :any_skip_relocation, ventura:        "a6d281fba29118c83a1e4111874fda061fce084bc9bf79c9945840bc8588a313"
+    sha256 cellar: :any_skip_relocation, monterey:       "5928979fd54df3fadbea1d226255d5bd2516e894487a2b6e547a65e8cb91d0e1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "11bae8ebef06031deb910027d74f8e002791b654f32f8a467689ac9e38c526d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7353a36a744071ac5c3b3e2099c8c43b30afffa6ef62df3cc760a09809bfb41e"
   end
 
   depends_on "python-typing-extensions"
@@ -83,8 +83,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/f1/a0/1edf4027e045268942834b6b893a2c1fb417794899a8cdc75c06b8baa261/hypothesis-6.68.1.tar.gz"
-    sha256 "b37bd77b4b7f404a59ff965e24be8aec4209323866e34ececdf416522c6d0854"
+    url "https://files.pythonhosted.org/packages/62/20/c75e73f0a7052578379aaf2c89de14a5fd987573729fd4bbccc1bb491b56/hypothesis-6.68.2.tar.gz"
+    sha256 "a7eb2b0c9a18560d8197fe35047ceb58e7e8ab7623a3e5a82613f6a2cd71cffa"
   end
 
   resource "hypothesis-graphql" do
@@ -173,8 +173,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/fc/b1/314fc4a9c937f5eac43ca2a5123aa886180482adb9a79716cd9f9c6365c5/starlette-0.24.0.tar.gz"
-    sha256 "7925947f177a19e906c6ace10f07c64c4f9fdf7d509caaac6589f7cc0cfd95f3"
+    url "https://files.pythonhosted.org/packages/3b/89/f873d6392441a8be9bcbc0abbc92aa73849879e72565331bd9b54cfb8675/starlette-0.25.0.tar.gz"
+    sha256 "854c71e73736c429c2bdb07801f2c76c9cba497e7c3cf4988fde5e95fe4cdb3c"
   end
 
   resource "starlette-testclient" do
@@ -198,8 +198,8 @@ class Schemathesis < Formula
   end
 
   resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/f8/c1/1c8e539f040acd80f844c69a5ef8e2fccdf8b442dabb969e497b55d544e1/Werkzeug-2.2.2.tar.gz"
-    sha256 "7ea2d48322cc7c0f8b3a215ed73eabd7b5d75d0b50e31ab006286ccff9e00b8f"
+    url "https://files.pythonhosted.org/packages/02/3c/baaebf3235c87d61d6593467056d5a8fba7c75ac838b8d100a5e64eba7a0/Werkzeug-2.2.3.tar.gz"
+    sha256 "2e1ccc9417d4da358b9de6f174e3ac094391ea1d4fbef2d667865d819dfd0afe"
   end
 
   resource "yarl" do

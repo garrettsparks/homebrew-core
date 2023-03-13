@@ -1,13 +1,19 @@
 class Tart < Formula
   desc "macOS and Linux VMs on Apple Silicon to use in CI and other automations"
   homepage "https://github.com/cirruslabs/tart"
-  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.37.2.tar.gz"
-  sha256 "b1f0f81f4804942cd7b834e54de4524fd43c492d048ae3a3a36f46c8b303ece7"
+  # NOTE: 1.x uses non-open source license
+  # https://tart.run/blog/2023/02/11/changing-tart-license/
+  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.38.0.tar.gz"
+  sha256 "ca6a46c2373eb9c9e105d2a80229f7cbcdb03d5ce800173ec01b78424f5a5d7f"
   license "AGPL-3.0-or-later"
 
+  livecheck do
+    skip "1.x uses non-open source license"
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "321bea92ef4cbd05bf1f85f203391a0a24c311d53f68e8b1bb1d3ab063c2a1e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f18923a7f2d94e0d2d5b53f33da65c099c4537fdc580d97277aefb85c890f234"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2938ae8b794f0875409753bc21f34b306e4ee39e73157d28fc2b1407b7bd39c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be32fd68c2c54a9c874b4278ae8599116c1bb74464c1ae94064097839ae64e09"
   end
 
   depends_on "rust" => :build

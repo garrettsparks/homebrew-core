@@ -1,19 +1,19 @@
 class Pluto < Formula
   desc "CLI tool to help discover deprecated apiVersions in Kubernetes"
   homepage "https://fairwinds.com"
-  url "https://github.com/FairwindsOps/pluto/archive/v5.13.3.tar.gz"
-  sha256 "c63f86ea3b309025372c844c0f3543732c52579fd94cda46c78513c311301c7d"
+  url "https://github.com/FairwindsOps/pluto/archive/v5.15.1.tar.gz"
+  sha256 "a0c294558bfd05679f499cbe700c88ebe895856feeecf7eb9992033a316f2580"
   license "Apache-2.0"
   head "https://github.com/FairwindsOps/pluto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb93568d666edf33ab4bb6000365992192cc766f12b297c49ceee7618a57dc1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3dfc23777c80ba7a7a93ba396347431b7360e706554d16366f7fb2742c3f0229"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec7e408f0d020187f0f035d273ec79e511d314f4d309576d44172efdba10527f"
-    sha256 cellar: :any_skip_relocation, ventura:        "cbc995a61539263e4e3b17d036d85cb042a297f36b854cd5fdc1da6c7cbf333d"
-    sha256 cellar: :any_skip_relocation, monterey:       "374c799f6fdba538a4d7fd369a708a42c9d568bc7bda5a40d490c2121a72e139"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d99be84f58dfeb4b852938011d172067a5a61cf60f506fd5ddc3ab69ee8e80e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd7ba134bcec27b68365d9afba0584e8dcc51a856dca70a2d59c449f5a71b3a1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15d01c49039740536479500de905784a25d65a2fa073ab50e69a923c45425a32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "15d01c49039740536479500de905784a25d65a2fa073ab50e69a923c45425a32"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b98cd2d061f040319d9ef5a039fc1be090a125c15ef880b3ab0c613db92f3cd7"
+    sha256 cellar: :any_skip_relocation, ventura:        "18a021bc5eb690618c96512581553afca2ece1adf3d7e0e50ed29b7e3fb7bf55"
+    sha256 cellar: :any_skip_relocation, monterey:       "18a021bc5eb690618c96512581553afca2ece1adf3d7e0e50ed29b7e3fb7bf55"
+    sha256 cellar: :any_skip_relocation, big_sur:        "18a021bc5eb690618c96512581553afca2ece1adf3d7e0e50ed29b7e3fb7bf55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bee688085e367d75f1aee2d14c7184eed5d36f4bf4ce2c833b16bea78461e4b"
   end
 
   depends_on "go" => :build

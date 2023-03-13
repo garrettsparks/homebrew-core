@@ -1,19 +1,19 @@
 class Proxsuite < Formula
   desc "Advanced Proximal Optimization Toolbox"
   homepage "https://github.com/Simple-Robotics/proxsuite"
-  url "https://github.com/Simple-Robotics/proxsuite/releases/download/v0.3.2/proxsuite-0.3.2.tar.gz"
-  sha256 "011244645ad700bb4ac56de1b24f174e734915991dfc3b0125a32c1f520bde2f"
+  url "https://github.com/Simple-Robotics/proxsuite/releases/download/v0.3.5/proxsuite-0.3.5.tar.gz"
+  sha256 "d6d40b085bbd81006005966532e10dd45ca02ea33f281d8d9b0c6da23f272216"
   license "BSD-2-Clause"
   head "https://github.com/Simple-Robotics/proxsuite.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5abe1ed78726c40f66f28af8a1e871b12215cf1677c038de29d68e1617f08e92"
-    sha256 cellar: :any,                 arm64_monterey: "695208b94313a73ce6ac98e5679ef675d5575a61d7211d497ef963be2b3d9d8c"
-    sha256 cellar: :any,                 arm64_big_sur:  "251b277b48916d2c43bf761bbbccbe60153c13d43251c9af8b5a6ab69835a81f"
-    sha256 cellar: :any,                 ventura:        "701ea6a2e63d31e49aad2d1cb4bd38874a2f1b010b0af41ff2f5b0a1c9514c6d"
-    sha256 cellar: :any,                 monterey:       "51eabeb178921e4cffcb80e61f105a900f0d8f3c5d01a73b43b180b9b9abf61e"
-    sha256 cellar: :any,                 big_sur:        "09909de5e089106e713adcb35deee6d31e75775890ead2e6727601fef06ef2d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fa408e5297f336ab48d9cc16410d654baea098ae6f8c97c8054d6f451fa78ed"
+    sha256 cellar: :any,                 arm64_ventura:  "c02489750f2bd5a5dc8b7e3af36e105c6daa37183c364e1ce9a210fb535e4670"
+    sha256 cellar: :any,                 arm64_monterey: "7cc145728784e80b26befedf1f94d9529ed8dd6bfda733bce3ee9f408161e1cc"
+    sha256 cellar: :any,                 arm64_big_sur:  "9e800e46087f44a47ce8f1c8af4ac8c88ee594ce327b55d42ad2c40827204dca"
+    sha256 cellar: :any,                 ventura:        "3c63c13b28d33ec1db520523816e9d92842d9d6b65dcb4761c152bd1457b4ae0"
+    sha256 cellar: :any,                 monterey:       "dc26e8c7eb3d3b89c84802bbac2e51b97dacafa14d347d0a9d9b4928acdc7f21"
+    sha256 cellar: :any,                 big_sur:        "a7c92615f83625f175381033a65f73689bff37e94a676676a771acc75c299ee4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf0b01b596ddd98a4b78604448ce9f0b27b1d81e87855137e0d724da3f780b12"
   end
 
   depends_on "cmake" => :build

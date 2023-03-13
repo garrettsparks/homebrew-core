@@ -2,19 +2,19 @@ class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
   url "https://github.com/docker/buildx.git",
-      tag:      "v0.10.2",
-      revision: "00ed17df6d20f3ca4553d45789264cdb78506e5f"
+      tag:      "v0.10.4",
+      revision: "c513d34049e499c53468deac6c4267ee72948f02"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce18c5f8433cd14ac4bbb6a95210d8b769d8e8d06e2a48b1e71970fa9af29aba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c4bb47231aff1b84b3483e3509764785761c594c9bdce358816795433f4ac61"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "149008312f8b21d8d1b6bdc5665d5fea74c628afbb9375b4b845b798f99b6c45"
-    sha256 cellar: :any_skip_relocation, ventura:        "46bd805abcdd690490627c0ace0049fcc4a0fe09d7897089ed065e924263a13d"
-    sha256 cellar: :any_skip_relocation, monterey:       "40ce3e72f5759dbe16a607a3e5ce13b7323c7ae3aff0d7ed7bdfc4d5a285bb0a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "49587309de93dcd3394293c5fb9cfceaf71712f0da8f95b217d06491a4e6bd3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fa2f03af8783f2b214ecefe4af9d23be2581637f7fa954f276a25306924bc72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c7fc21c164fb63befb7409757b963f9d372330e8a70a6c1a5fb9c9e62b7b48e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c7fc21c164fb63befb7409757b963f9d372330e8a70a6c1a5fb9c9e62b7b48e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c7fc21c164fb63befb7409757b963f9d372330e8a70a6c1a5fb9c9e62b7b48e"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ce242d47304f101712141540efc4f3cb4314132918466bdab5d5b4de84c885f"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ce242d47304f101712141540efc4f3cb4314132918466bdab5d5b4de84c885f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6ce242d47304f101712141540efc4f3cb4314132918466bdab5d5b4de84c885f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "304acee37c3e38c0819a91a6a884b41955df511e7e74304cd02660e8ed42711c"
   end
 
   depends_on "go" => :build

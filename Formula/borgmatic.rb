@@ -3,18 +3,18 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/2d/d2/69ef54fc0d92830556dce3c7cdcad8f7174075eef014b141b6d47e343c96/borgmatic-1.7.6.tar.gz"
-  sha256 "4cd87495a340c8790864b0b9d61cdc852203bec1ecb7668fc6845d23a31dafce"
+  url "https://files.pythonhosted.org/packages/db/4d/bbe4fe66fb2fc6fcf2f0550638dce9d169acd237b3be29ebe8f6a2615c6b/borgmatic-1.7.8.tar.gz"
+  sha256 "fa563208f2a069664f5242068e0981112eaf83565b819e5be962a6a6a01cca13"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80f7129e23cc083c155f42da1822178cb2177af1b001a3b35372ffe0d0f7f942"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "efda8b9e257ffbdffdcc7ec85c87e1fa8bb0ef5444f1d6a291c4d2e0e0c09cb7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98eafc4ecbc05d253ebae7fda909568043311fd2cca9fc4ca133b4a4ada1b0b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6d7334802e57b7d233a318d872e38d4a2a58122c2c9705a1a5cbf6ee2ffff35"
-    sha256 cellar: :any_skip_relocation, monterey:       "41518c01ead0adcbe5b0e6699f9f224c01c7e9d8b0d4cb33184b6aed844c5265"
-    sha256 cellar: :any_skip_relocation, big_sur:        "95cae01122b537cbca9594f9ebfacd0d2069110bf8bf081bd8c0c4abe6272c98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c03bb928805bb17df756fc6d8934349206bf2e8b5f8cef3eda1dfed1819d58a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06cf25355339f26965b730c8e73638dd1ead21a5551080994933c9a875873594"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef4ed54f6a5c0974d904d8e2dbba245d68a4cf19ee6a0c3b809913358c576b96"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb7c154a493ec066cf3ace58a1f433a41b8be45b816c7d2a895b84fb9d9b34c7"
+    sha256 cellar: :any_skip_relocation, ventura:        "b4e4652d8b346c71a5367f1a5c96bfe025773810c0b11b8220757874aae9ba2e"
+    sha256 cellar: :any_skip_relocation, monterey:       "df5f36fac91403b8fbcc9f0d5d1380d01267f1c6a2a536a4e8170e8f9f2439dc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b6cd88e217fddee20d9f55b8a5ca87da586e86db1a619bfe87a0959775a9180b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0963d6306b08d475bb6a8f547481f8b969bf3be3a739e27eb76c00ea9b18b8e"
   end
 
   depends_on "python@3.11"

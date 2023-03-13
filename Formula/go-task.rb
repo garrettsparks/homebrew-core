@@ -1,28 +1,29 @@
 class GoTask < Formula
   desc "Task is a task runner/build tool that aims to be simpler and easier to use"
   homepage "https://taskfile.dev/"
-  url "https://github.com/go-task/task/archive/refs/tags/v3.20.0.tar.gz"
-  sha256 "aa66f82b54de5d9f41389dc31dbf0c00c84d5bc4ecd2499b4ae34c55b6d9b08c"
+  url "https://github.com/go-task/task/archive/refs/tags/v3.22.0.tar.gz"
+  sha256 "9abe03f06bac507bc8a153bd94ccbe5cde324ee120da7d596b1845ae4e8e3d53"
   license "MIT"
   head "https://github.com/go-task/task.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bb8a8686516cc209814cfcdd83a99e6efea5d887aaa311ebb0e06c63d70236a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d29a717024f87d5b4ffd11cf10634dcfb5ab3dd70811ce14e502bf887d1029ed"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dec7fc8c28c12642d7bf7f13876c4f631e3aace61fb6010f106c0ee1615f1822"
-    sha256 cellar: :any_skip_relocation, ventura:        "5b1263db6e54fc56c9ea8da2e582199acc63492da76c98e2035f10b6776a61df"
-    sha256 cellar: :any_skip_relocation, monterey:       "86fccd6cd444f2b753c449a84d5cd3ead80e0486526bb0dbad30c0f526d4a861"
-    sha256 cellar: :any_skip_relocation, big_sur:        "279477a22cfe8bf0204cc920d74ecd82cc77ffb4975a476f17d84f6cc6dfb469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93e9b4c3c94c87b5dcf70932d629f6ca23aa16b779fc787428b3a4cb02055a26"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "528f6f6e8c482aa77b987fa515634fcfcf8c8f767f2b8e5f1ccbdae1d0eac796"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "528f6f6e8c482aa77b987fa515634fcfcf8c8f767f2b8e5f1ccbdae1d0eac796"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "528f6f6e8c482aa77b987fa515634fcfcf8c8f767f2b8e5f1ccbdae1d0eac796"
+    sha256 cellar: :any_skip_relocation, ventura:        "67c0d32d69083528c468d9d51b5e7d992b9c7c7dd16fb52e6769d6a1609e8d63"
+    sha256 cellar: :any_skip_relocation, monterey:       "67c0d32d69083528c468d9d51b5e7d992b9c7c7dd16fb52e6769d6a1609e8d63"
+    sha256 cellar: :any_skip_relocation, big_sur:        "67c0d32d69083528c468d9d51b5e7d992b9c7c7dd16fb52e6769d6a1609e8d63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc618c10aced94093d5116c3dc27c8f34541880371d47de250f1b47098a78420"
   end
 
   depends_on "go" => :build
+
   conflicts_with "task", because: "both install `task` binaries"
 
   def install
     ldflags = %W[
       -s -w
-      -X main.version=#{version}
+      -X github.com/go-task/task/v3/internal/version.version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"task"), "./cmd/task"
     bash_completion.install "completion/bash/task.bash" => "task"

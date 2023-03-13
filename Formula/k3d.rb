@@ -2,8 +2,8 @@ class K3d < Formula
   desc "Little helper to run CNCF's k3s in Docker"
   homepage "https://k3d.io"
   url "https://github.com/k3d-io/k3d.git",
-    tag:      "v5.4.7",
-    revision: "05d839b2b880cd0c764f0794fe0aa029f1300d19"
+    tag:      "v5.4.8",
+    revision: "5e5f56f7ec8f9be76bf301809f361ce6672d589d"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,13 @@ class K3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c336784e94c795ca14f2c386f3c29d820bcfe0cf039b1d5d4f9cb1aaf76a23d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8d2dfd67037402cc11a7bbc869704b9fd4a0f3b1beb90b241bdf0320f0eb80f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "294e9615047ad90d758d700b75a8688f2c435b94bf872f89b40e0fd89a4e545c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6aaa5e7ce3f6ec0093878439ecf6160c3987414b2c897929eb34d9ceaed578e"
-    sha256 cellar: :any_skip_relocation, monterey:       "7e5febf2cf5790f4a873cd42db315dc565b9069669f14a3c63d4e71f675fed9a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "44ab04cf2b8c26ff02114018fba171be323e75f91cc88b2615309fc82f7df85c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b54a5483a88662242d44450a2d0a22e200ad22543bf2d3e8e5818e1b40715b20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e95e4b3e4d4538f1383804a14195c3a7d3fdbd1a52b34675d01e04c1e3371960"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e95e4b3e4d4538f1383804a14195c3a7d3fdbd1a52b34675d01e04c1e3371960"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e95e4b3e4d4538f1383804a14195c3a7d3fdbd1a52b34675d01e04c1e3371960"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb6fb66c7c943e125a6570c6ae3547edd9304acb7f6b2bc74f0d381fdf3e2d0f"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb6fb66c7c943e125a6570c6ae3547edd9304acb7f6b2bc74f0d381fdf3e2d0f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fb6fb66c7c943e125a6570c6ae3547edd9304acb7f6b2bc74f0d381fdf3e2d0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "326b06b516deed6aba37bf717f0686ca6d6aeb93f368062b4b498d2e89855c0f"
   end
 
   depends_on "go" => :build

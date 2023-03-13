@@ -12,30 +12,31 @@ class Xray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b739ca531f21a4dd6aee19c8e95d2b65ab023206c10c7bed08587b53550c6976"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "988dd07808358425bc111320696c773f82e60f0d62105d3b5be82ad0f17e877f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6369fe53f43a55ad72a23c77dc0a325e5e526aa3500cc1f8ae793e4eb4f7cb34"
-    sha256 cellar: :any_skip_relocation, ventura:        "05aab5823412592f174489503a805291d4569633b005f585ce27b6ba8d2abf3f"
-    sha256 cellar: :any_skip_relocation, monterey:       "337bc3483f22cf26c6d5c3c8e9e0eba378e0f2f705058468bf347c270f42365a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bafa102cb282bf9c787352c3f12d4fe977f9e003cc4cb48af682a4a3586dff72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99e25615756c8e37ae8543a667203f4b568399c81e83f61bb3caaa9be7df5337"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02a0def74264e8b6308697d83cd59b2091994d212744c956a54eecad23d67673"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "02a0def74264e8b6308697d83cd59b2091994d212744c956a54eecad23d67673"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02a0def74264e8b6308697d83cd59b2091994d212744c956a54eecad23d67673"
+    sha256 cellar: :any_skip_relocation, ventura:        "173fd8e1c080f4863376842cfb8fb978dc18883242c8434627380fbc1a6f6801"
+    sha256 cellar: :any_skip_relocation, monterey:       "173fd8e1c080f4863376842cfb8fb978dc18883242c8434627380fbc1a6f6801"
+    sha256 cellar: :any_skip_relocation, big_sur:        "173fd8e1c080f4863376842cfb8fb978dc18883242c8434627380fbc1a6f6801"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9de81685475b5e01cdb209d2f0a22fbb50a57cdd2082f993c50d28a32dc0e685"
   end
 
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https://github.com/v2fly/geoip/releases/download/202212290044/geoip.dat"
-    sha256 "da84c95fcc09bdb60334cf4ff0d26e6ff1c3d7906a9c5c91d69556a425558677"
+    url "https://github.com/v2fly/geoip/releases/download/202302020047/geoip.dat"
+    sha256 "33e7836477c4b8cf4fb547b74543ab373c6f0ab99d6f1eb62faec096042e901d"
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20221230094252/dlc.dat"
-    sha256 "ed244308475f880a06a02ebd7872790bb32704ca3bdc7c79070aa35f496080e0"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20230202101858/dlc.dat"
+    sha256 "64ab40c10fd5f36d2b5746c4c16b657dba536cb749d6357a39fab2c3ab4bad31"
   end
 
   resource "example_config" do
     # borrow v2ray example config
-    url "https://raw.githubusercontent.com/v2fly/v2ray-core/v4.44.0/release/config/config.json"
+    url "https://raw.githubusercontent.com/v2fly/v2ray-core/v4.45.2/release/config/config.json"
     sha256 "1bbadc5e1dfaa49935005e8b478b3ca49c519b66d3a3aee0b099730d05589978"
   end
 

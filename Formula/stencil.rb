@@ -1,19 +1,19 @@
 class Stencil < Formula
   desc "Smart templating engine for service development"
   homepage "https://engineering.outreach.io/stencil/"
-  url "https://github.com/getoutreach/stencil/archive/refs/tags/v1.29.0.tar.gz"
-  sha256 "0e5b38d4b297dfc2494354df8e7a2771a3d26f54a9ea1ce485065a4843a9d8a3"
+  url "https://github.com/getoutreach/stencil/archive/refs/tags/v1.31.0.tar.gz"
+  sha256 "3de265b06d597206fcad98fd1b936dba51f15e08dfa943e32b9ed64001244b2a"
   license "Apache-2.0"
   head "https://github.com/getoutreach/stencil.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5678df746fd1b21655d60d0a6636889eeb048fd3c54b9614db75119678733080"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2643dc095faf324aabb0713cf3d7154d0070b69f86715952ad4333c5ac2b0bed"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46bf7d9c8352ecb70e90163959b19641e4f26610254de32173fef49117943c62"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2692d9981cbed8ad0513bc2ab934f63d574ad56dc6ee6030cafac5aeaba6d97"
-    sha256 cellar: :any_skip_relocation, monterey:       "0de84c459ac9e9d6473cf3b78a324aec3c24a80d62a7bd1b3f97d6e6757d7834"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb5d0b1e85546856c5713291e01d9898762dad4813f0a16ec101e2ac7bf3ffd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9404fa6e22dea194b2bf75dd4015c9590f33b51e836020018e4311741b87220e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "651a2513d70ff60c9f50541e35f061a431b5b68cce4c45db2a18d529590c1c0b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dce501ce9de09e66eaaee0d0106ce84ce027cf02f88e6d7c364f518e8fa4e295"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8ce8c42bf87a432c8994bed8b42a3d48948b33f763e77ebd7ec263facc88bc0"
+    sha256 cellar: :any_skip_relocation, ventura:        "4135c2f0fc8c4259867090d153b87011caa92e3415ea6dd06b6d6b779aa7a225"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f01aae4aaea5215a2fdaa029c0e2cf18737570fe2f530471f8b6f736d03d10c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a059cbd169bba2510714d02e7c097422efca3eb53d11550962e4abfb573e3742"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59ce7778506b67f6d69f1e9d77e93932add0fbedd5bdd4dd63c366a67beb78ac"
   end
 
   depends_on "go" => :build

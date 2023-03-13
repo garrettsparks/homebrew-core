@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https://convox.com/"
-  url "https://github.com/convox/convox/archive/3.10.5.tar.gz"
-  sha256 "2a84b5c645adf97ef3272acb89d6e4d3a900330782ef815d39f9f8e15259356a"
+  url "https://github.com/convox/convox/archive/3.10.7.tar.gz"
+  sha256 "ff634377e480affdde9c603b696ce103ca59ec0c3dfe604e54ac37301a60b250"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,13 +12,13 @@ class Convox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e39012dcf45e190cda3e000e2fc00624840f84aef874b35bdd82def015cf7d1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c786eb3fac3c0346460af55f6908aa0fbb46ba6e6d4cc98f246d4e48c4cf4ec"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5ecdab9126fcca940a3ab5f88e227ae9660a12abe3b4a185407ea9697e08bc67"
-    sha256 cellar: :any_skip_relocation, ventura:        "25efa7ac6005d750b93f42bc2abaaec8567575b6f99631505a5b85ce842d8e8d"
-    sha256 cellar: :any_skip_relocation, monterey:       "8952fdfbbd0de05435e52390047b5adedfa807e0f8f9f6d5cd1b33c97db393e3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "57888c9ca2a7c3bb0eace4f10ef97e1606cc983fa6d859885bc860bec1a3c254"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e0e2549737b5fb6dab8866f3534b5d37a6e4451acc12958b6391e3b36463c19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cdec0a8890370faaa63ebc02bdf536b578af0f5318d91124671a1227755df89"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71fd4d3ea9220021846c428491f66d565078faf47c702f286d9db05def229f1a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b1a8bd42c2afe1ae0faba78746317934abcba4f4d097de71613e40432860f19"
+    sha256 cellar: :any_skip_relocation, ventura:        "68d75d7c558099af26d3ec48b361a37eb0d83ae675cb9928c464f270fd6f753f"
+    sha256 cellar: :any_skip_relocation, monterey:       "438e5fa9a19a425316e2509dd19b406484d88e4ddf9caefd671f58e94c3182c4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3d76972065c8f2219d095eca9cfcc84e31f90c51e1dc0ca83159a79aab23c85a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea902128de795fe68d53c80b0d148283caa13498cb4773ffe79be3625ae3563f"
   end
 
   depends_on "go" => :build

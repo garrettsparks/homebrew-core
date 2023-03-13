@@ -1,20 +1,18 @@
 class Fastnetmon < Formula
   desc "DDoS detection tool with sFlow, Netflow, IPFIX and port mirror support"
   homepage "https://github.com/pavel-odintsov/fastnetmon/"
-  url "https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.3.tar.gz"
-  sha256 "72f364ff5557afe5670bb9444e975841bf2c2db4eb13d2425e5d2903ca8fcf22"
+  url "https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.4.tar.gz"
+  sha256 "84cd5db0e270f6c268923592eabd5cb0d1689293d9d9f6f0634af548b29f9bb4"
   license "GPL-2.0-only"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "2b4dda6d3c0f218d666e88f459dda479b322e26374c9f9dde86bdae5b1660ce2"
-    sha256 cellar: :any,                 arm64_monterey: "00ecd8349b21c859ea3c1cf175eaf7088272c1c881f913aeff436f1c63596104"
-    sha256 cellar: :any,                 arm64_big_sur:  "28e6a96d656dcfa6bc44da3c7a3dc95ad8d8bbeb7de07fea39010795ddd88b29"
-    sha256 cellar: :any,                 ventura:        "d4eae16a2d4ed1d01ccaa32e44eb8f9a352686a2a5e8edd9b8f6c49dc0e7f064"
-    sha256 cellar: :any,                 monterey:       "683804fc1a036bc97e1613783f031db86d6e8818ef9754b4eda54a9fec413f3c"
-    sha256 cellar: :any,                 big_sur:        "82f8d91c8f71cbf25c183bd5a5f6ddb6004272ebe65e4ac68611be942ab59c7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27777837bc3236e5abd9f799307aa3c09d5900c14b9e70c4d948ac48c01101b6"
+    sha256 cellar: :any,                 arm64_ventura:  "dec1a78e6dde2bbd9f86db7c71af6bc20204344a73309600dad02a19a9c04e27"
+    sha256 cellar: :any,                 arm64_monterey: "369bc03e7536620d462c81dbcd252ee59868d4fac3d1c9e0756ce51d9c5ddf28"
+    sha256 cellar: :any,                 arm64_big_sur:  "f6e47615be89812ef189e10c90e775e3702d7f0b8392fa50e5e08f868e99de6c"
+    sha256 cellar: :any,                 ventura:        "2a6d299ed92a78eae6f4cfa010ccd1d5c0f1a179f9036bae3d724e6ce60e1eb3"
+    sha256 cellar: :any,                 monterey:       "4f1986994bd9c1c950cb3b04e41c6a94cd7f6ff7abe5db2bdf7751c0ec591aad"
+    sha256 cellar: :any,                 big_sur:        "631635075f6ae2fcfdc9cccd5ad73bda5ed22616fe1f2d412bb0cd9410add200"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eecbde2f55c9e3df9f834cd4c75d50768c46d2d18a28e69e5216da178a80267"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +21,6 @@ class Fastnetmon < Formula
   depends_on "capnp"
   depends_on "grpc"
   depends_on "hiredis"
-  depends_on "json-c"
   depends_on "log4cpp"
   depends_on macos: :big_sur # We need C++ 20 available for build which is available from Big Sur
   depends_on "mongo-c-driver"
@@ -34,29 +31,9 @@ class Fastnetmon < Formula
     depends_on "elfutils"
     depends_on "libbpf"
     depends_on "libpcap"
-
-    patch do
-      url "https://github.com/pavel-odintsov/fastnetmon/commit/c48497a6f109fc1a9f5da596b055c3b7cffb96d4.patch?full_index=1"
-      sha256 "2e3eabf7727e12d2f1d57f1db84d1272468abd67989cc8d9a8624035c36aa8c8"
-    end
-    patch do
-      url "https://github.com/pavel-odintsov/fastnetmon/commit/c718e88d0b25dcfbd724e9820f592fd5782eca6c.patch?full_index=1"
-      sha256 "bd7e7e1de406b0918a192dcc8a058e82bee4195c3f00157902f0c998f9b3d0e2"
-    end
-    patch do
-      url "https://github.com/pavel-odintsov/fastnetmon/commit/3b912332801c85dd5840cedb6bb248a339056187.patch?full_index=1"
-      sha256 "bbdbfed272efcd05959479636857c89721379ec5585f5e5ff8a1523e1b32ee1d"
-    end
   end
 
   fails_with gcc: "5"
-
-  # patch macOS build, remove in next release
-  # upstream PR ref, pavel-odintsov/fastnetmon#950
-  patch do
-    url "https://github.com/pavel-odintsov/fastnetmon/commit/b3895208c9aab27881c97e1181e7622ea3ea84b0.patch?full_index=1"
-    sha256 "8ee473b8b44765af6ad5bb9e9ffec7cb6b47bec196fb96de12f21bf890f778a1"
-  end
 
   def install
     system "cmake", "-S", "src", "-B", "build",

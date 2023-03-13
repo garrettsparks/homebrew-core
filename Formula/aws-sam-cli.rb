@@ -3,19 +3,18 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/cb/1f/c78e43b011d2154500b157d0c11fd1e8741102ec1a30732678e1708a08f1/aws-sam-cli-1.73.0.tar.gz"
-  sha256 "438b3420687731af487e1e64ad4166a180ce4c0e90dfefb12a689899371c8f21"
+  url "https://files.pythonhosted.org/packages/5f/10/9fb21550e9c819278bebfa00c5ba058a2afae6fab5b2d62c8d40e36a78df/aws-sam-cli-1.76.0.tar.gz"
+  sha256 "1d2ab13b415d73bbdf5ecde0dc6ff2eb952873fe1bba53c3910362453afcca70"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "043fcfd6f5b00240c9cae4de8d3ac659a03fd9a7183453e308a24ea325e199d7"
-    sha256 cellar: :any,                 arm64_monterey: "1242d170f6af834e018f52d7c1f308d919f9078b78f70d88e476d0b5f4d6a418"
-    sha256 cellar: :any,                 arm64_big_sur:  "3fbe42a5af9139fde03f14c76349457412eee88299e82a4b5057a8d21bc65a1b"
-    sha256 cellar: :any,                 ventura:        "1c371c2e2e1dbe4c9afc862396d3b6916828c60cbf538351b70937342d71c35c"
-    sha256 cellar: :any,                 monterey:       "ba52b6ce84d40a0a6d2a74c249b6497441bf9403dae85783cd23329281dae8f5"
-    sha256 cellar: :any,                 big_sur:        "1502af77443a60d600ad27ab9c40bf40885a9fbde994c3724d1132ae46224c47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "765ee3c889914cf857c73cee44ad3d435cb6d003ead01149c12c06a223668c21"
+    sha256 cellar: :any,                 arm64_ventura:  "344404855342077316009641917199b66d75fa96af1756297d430ffb7421ee43"
+    sha256 cellar: :any,                 arm64_monterey: "71f851fe298c4c0576b7bb4ff1249ba1b28ff62a201c625fac83eb0245771730"
+    sha256 cellar: :any,                 arm64_big_sur:  "a2615c98cf18a92fe3f884e2a81035cc9916f37076e4346cf387f645473e7ae7"
+    sha256 cellar: :any,                 ventura:        "30d82a62fe93f5df9de99347ef1c072bd0b15f031d39b07fbf0cdadf05c308b0"
+    sha256 cellar: :any,                 monterey:       "adbca4357860926b785a7ba08bac44ab557fa4ad28093b8fbe83692135e2b2d2"
+    sha256 cellar: :any,                 big_sur:        "cff7090215f121841f385bfae032c4d7bd85044ade4a3a458e1da346f31c8cb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d16b19fd0bd14d5cf3bd4f89d122b52a6471aaddb27ece35172f8bc162e7061e"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -34,13 +33,13 @@ class AwsSamCli < Formula
   end
 
   resource "aws-lambda-builders" do
-    url "https://files.pythonhosted.org/packages/76/52/36504d5ca488f04e788c7e245ee32fa646279bd2b1c9329d89f28ac1f5db/aws_lambda_builders-1.26.0.tar.gz"
-    sha256 "511a3be80511b3cedbc223504fef9366063c45f8fff94d2acb270de92e9efb02"
+    url "https://files.pythonhosted.org/packages/ab/67/29dca093bf230c675047e2d690070eb5b9d5909aa345834b1be541739eee/aws_lambda_builders-1.27.0.tar.gz"
+    sha256 "8019d5d5d7de32b159e33ff447672308fc20dd58bc7452f82af15f6667037e1f"
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/49/f2/991ddbe70dec85bebb0bce18f7b4902ad46885f91ffa27108df061cf3ff8/aws-sam-translator-1.59.0.tar.gz"
-    sha256 "9b8f23a5754cba92677d334ece5c5d9dc9b1f1a327a650fc8939ae3fc6da4141"
+    url "https://files.pythonhosted.org/packages/a9/f3/1992ced4e2fc69137f37c563b23249a5bd142979214fb77fb6258c04edb4/aws-sam-translator-1.60.1.tar.gz"
+    sha256 "a73f5ad997e63f36ffc77dcfbe23fbaa68bafdfea993420b7a9c40b2f190e985"
   end
 
   resource "binaryornot" do
@@ -49,13 +48,13 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c0/63/5dd782da5653528c35ca2ec7f44a41ec3121cda8701f14c6416912118dc6/boto3-1.26.69.tar.gz"
-    sha256 "eb8cde24a4c5755c35126e8cd460e6b51c63d04292419e7e95721232720c7e5b"
+    url "https://files.pythonhosted.org/packages/1e/27/51c9b88c4c8cd2001efa3f628085553ecea9bcdad95baade3cc187f0980f/boto3-1.26.84.tar.gz"
+    sha256 "7ab7bb335b726e2f472b5c050028198d16338560c83c40b2bd2bd4e4018ec802"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/db/31/720ac07bd096fdd24fbeb42111638b41fd220e618790b94ada77a6bd1f3e/botocore-1.29.69.tar.gz"
-    sha256 "7e1bebca013544fbc298cb58603bfccd5f71b49c720a5c33c07cf5dfc8145a1f"
+    url "https://files.pythonhosted.org/packages/cc/70/baa9c9383e52da51fc52b508770ccbff6c203027f27b4959feeb3000bffe/botocore-1.29.84.tar.gz"
+    sha256 "a36f7f6f8eae5dbd4a1cc8cb6fc747f6315500541181eff2093ee0529fc8e4bc"
   end
 
   resource "certifi" do
@@ -69,8 +68,8 @@ class AwsSamCli < Formula
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/24/c4/f448e0af35fa64e074358de3c13df9ccf4336f9b6066a48dc338bc5fd3bf/cfn-lint-0.72.2.tar.gz"
-    sha256 "d7ef1658687cf119adcf6ec312f28b5adc312d80293a54cdd5c140e2695a243c"
+    url "https://files.pythonhosted.org/packages/e5/ab/896d52b8dbaa08a35c99eef6001a1700ba0ae03e7d32f89e806161447854/cfn-lint-0.74.0.tar.gz"
+    sha256 "b5096fe3d1a1f6ff99cfd1b219b9237ec10759a92784391b98d586dc345a39ee"
   end
 
   resource "chardet" do
@@ -94,8 +93,8 @@ class AwsSamCli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/6a/f5/a729774d087e50fffd1438b3877a91e9281294f985bda0fd15bf99016c78/cryptography-39.0.1.tar.gz"
-    sha256 "d1f6198ee6d9148405e49887803907fe8962a23e6c6f83ea7d98f1c0de375695"
+    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
+    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "dateparser" do
@@ -174,8 +173,8 @@ class AwsSamCli < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/cd/16/c44e8550012735b8f21b3df7f39e8ba5a987fb764ac017ad5f3589735889/networkx-2.8.8.tar.gz"
-    sha256 "230d388117af870fce5647a3c52401fcf753e94720e6ea6b4197a5355648885e"
+    url "https://files.pythonhosted.org/packages/99/f9/d45c9ecf50a6b67a200e0bbd324201b5cd777dfc0e6c8f6d1620ce5a7ada/networkx-3.0.tar.gz"
+    sha256 "9a9992345353618ae98339c2b63d8201c381c2944f38a2ab49cb45a4c667e412"
   end
 
   resource "pbr" do
@@ -186,11 +185,6 @@ class AwsSamCli < Formula
   resource "pycparser" do
     url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
     sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
-  end
-
-  resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/53/17/34e54e352f6a3d304044e52d5ddd5cd621a62ec8fb7af08cc73af65dd3e1/pydantic-1.10.4.tar.gz"
-    sha256 "b9a3859f24eb4e097502a3be1fb4b2abb79b6103dd9e2e0edb70613a4459a648"
   end
 
   resource "pyOpenSSL" do
@@ -209,8 +203,8 @@ class AwsSamCli < Formula
   end
 
   resource "python-slugify" do
-    url "https://files.pythonhosted.org/packages/49/3b/492affa71ccdeaadce1a6fba17e12fec301820b19b8cd7220d849686f8ec/python-slugify-8.0.0.tar.gz"
-    sha256 "f1da83f3c7ab839b3f84543470cd95bdb5a81f1a0b80fed502f78b7dca256062"
+    url "https://files.pythonhosted.org/packages/de/63/0f60208d0d3dde1a87d30a82906fa9b00e902b57f1ae9565d780de4b41d1/python-slugify-8.0.1.tar.gz"
+    sha256 "ce0d46ddb668b3be82f4ed5e503dbc33dd815d83e2eb6824211310d3fb172a27"
   end
 
   resource "pytz" do
@@ -284,8 +278,8 @@ class AwsSamCli < Formula
   end
 
   resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/6c/a8/60514fade2318e277453c9588545d0c335ea3ea6440ce5cdabfca7f73117/Werkzeug-2.0.3.tar.gz"
-    sha256 "b863f8ff057c522164b6067c9e28b041161b4be5ba4d0daceeaa50a163822d3c"
+    url "https://files.pythonhosted.org/packages/02/3c/baaebf3235c87d61d6593467056d5a8fba7c75ac838b8d100a5e64eba7a0/Werkzeug-2.2.3.tar.gz"
+    sha256 "2e1ccc9417d4da358b9de6f174e3ac094391ea1d4fbef2d667865d819dfd0afe"
   end
 
   resource "wheel" do
@@ -299,13 +293,6 @@ class AwsSamCli < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # remove non-native architecture `aws-lambda-rie` binary
-    site_packages = Language::Python.site_packages(python3)
-    rapid_path = libexec/site_packages/"samcli/local/rapid/"
-    rapid_path.each_child do |f|
-      f.delete if f.file? && f.basename.to_s.exclude?(Hardware::CPU.arch.to_s)
-    end
   end
 
   test do

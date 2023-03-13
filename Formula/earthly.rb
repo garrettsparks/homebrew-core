@@ -2,20 +2,19 @@ class Earthly < Formula
   desc "Build automation tool for the container era"
   homepage "https://earthly.dev/"
   url "https://github.com/earthly/earthly.git",
-      tag:      "v0.6.30",
-      revision: "743687991d227f2f7e2e6ba11a90f443b4f99c67"
+      tag:      "v0.7.1",
+      revision: "eb7ed29c2c3b16a47d4adae00f2e087e98e5570f"
   license "MPL-2.0"
   head "https://github.com/earthly/earthly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e576fe99c01952c27a0cb9ac61ade2c08b976dca197ed080e51852da1682098d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e576fe99c01952c27a0cb9ac61ade2c08b976dca197ed080e51852da1682098d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e576fe99c01952c27a0cb9ac61ade2c08b976dca197ed080e51852da1682098d"
-    sha256 cellar: :any_skip_relocation, ventura:        "c12731381bb5ba4abd20324e7bb0e2b200c859b874cd437596b3af5bc73436ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "c12731381bb5ba4abd20324e7bb0e2b200c859b874cd437596b3af5bc73436ed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c12731381bb5ba4abd20324e7bb0e2b200c859b874cd437596b3af5bc73436ed"
-    sha256 cellar: :any_skip_relocation, catalina:       "c12731381bb5ba4abd20324e7bb0e2b200c859b874cd437596b3af5bc73436ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68c6f5bd789ba2b3ca424bbe2046c8154777f164d2abeb9bb94dbc71a4b3ff29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4520ce916bc4fdfecb5c2a18ba5ebd21544eca63f3fd75e6b2aeda9733408193"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4520ce916bc4fdfecb5c2a18ba5ebd21544eca63f3fd75e6b2aeda9733408193"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4520ce916bc4fdfecb5c2a18ba5ebd21544eca63f3fd75e6b2aeda9733408193"
+    sha256 cellar: :any_skip_relocation, ventura:        "84df193100b8611ef0cd7e40109282d8a1d75609ef2856576c049956e697b470"
+    sha256 cellar: :any_skip_relocation, monterey:       "84df193100b8611ef0cd7e40109282d8a1d75609ef2856576c049956e697b470"
+    sha256 cellar: :any_skip_relocation, big_sur:        "84df193100b8611ef0cd7e40109282d8a1d75609ef2856576c049956e697b470"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08536ec6d7d54cc1fbef9c7d435aafe2c10f0fe6ffb6afa1429df3513485821f"
   end
 
   depends_on "go" => :build

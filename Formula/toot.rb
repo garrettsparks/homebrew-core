@@ -3,19 +3,19 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https://toot.readthedocs.io/en/latest/index.html"
-  url "https://files.pythonhosted.org/packages/31/17/a5b0352ecb8ad8177377e08bd324fad11e9e94e882c8ade375b08704507e/toot-0.34.0.tar.gz"
-  sha256 "619c861e50950746673b107665997e325998276585c19a6dd42b86e1054328ce"
+  url "https://files.pythonhosted.org/packages/f3/f6/fc202dbaf0e08e459f630a306627782cce01c86a7c268d2896af23a7d52f/toot-0.36.0.tar.gz"
+  sha256 "8af5f3e55af8a0e764bb2d7738d737b16855647e4bc7947517ccde393297e9d8"
   license "GPL-3.0-only"
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce9aa9ce775cb4fbaef53512c44c2ee366650e56161b41e944f1d13d303db0eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8eac9b9f89e2304c4256f61843db0a47b145f311f8efead6ef5f9f2518edb45"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4bd0de1ab82434f25c65d1e2176398a42af40e620af13c6a8d9c027d7444981"
-    sha256 cellar: :any_skip_relocation, ventura:        "f027d3d6b925f17ecbb2773bd68bbca4b498c42b22cb57cf13316e74b7b33db5"
-    sha256 cellar: :any_skip_relocation, monterey:       "29ce594d1916854c85d65b9582a1dd62b2497ed60cb1c479f1a36b421165d9a0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "88f48cc94c30bc4527bd35b90619c4b2b21581c6caf88fc95e7f073ee78eff91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2df8cd5bc39309af15ed3a3826d492d13e0565bf317f9131430bd7f64214e6f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70eb86c57018f0b281d15675b9716fbf40f733ad09ec0e206f2b945eb0b90bdb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9cbd7a3d5b151f550124553e1a58ebc94c67bae27561ab99e527eabbd5ad854"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68cfa6808d9acf021b4aea15608d850da1d449961f66f28fa1539ba0ffba6e58"
+    sha256 cellar: :any_skip_relocation, ventura:        "589016788da55a341a74ab3091102d86c225821c1d250bd63195f18fc7f459db"
+    sha256 cellar: :any_skip_relocation, monterey:       "6bfe513499989608bfffca6dc84a2dc801a81beb74503bf1eb68ce1084b6acdb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3cde799b5c07bff05558ccc63b9463ea6982fb87a782bdd18eeac4a61dce3b64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f24ab0b6016f2b5c96d06094004b29e266f2f5e624abd0a0d4c63bc74900b87d"
   end
 
   depends_on "python@3.11"
@@ -31,8 +31,8 @@ class Toot < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
-    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "idna" do
@@ -46,8 +46,8 @@ class Toot < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/f3/03/bac179d539362319b4779a00764e95f7542f4920084163db6b0fd4742d38/soupsieve-2.3.2.post1.tar.gz"
-    sha256 "fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"
+    url "https://files.pythonhosted.org/packages/1b/cb/34933ebdd6bf6a77daaa0bd04318d61591452eb90ecca4def947e3cb2165/soupsieve-2.4.tar.gz"
+    sha256 "e28dba9ca6c7c00173e34e4ba57448f0688bb681b7c5e8bf4971daafc093d69a"
   end
 
   resource "urllib3" do

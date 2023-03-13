@@ -1,8 +1,8 @@
 class Logcli < Formula
   desc "Run LogQL queries against a Loki server"
   homepage "https://grafana.com/loki"
-  url "https://github.com/grafana/loki/archive/v2.7.3.tar.gz"
-  sha256 "07b7030576abf4ef63febf4dcddf95ff935aab6d9ab4fc0404322794d94bf3ee"
+  url "https://github.com/grafana/loki/archive/v2.7.4.tar.gz"
+  sha256 "b5521c0d12699f59ddf48ff7eaacddaa56abe90da4579f35c18f0752fc8e95c0"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
@@ -11,16 +11,17 @@ class Logcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2c0185ab8b68cba01bd10af6a0822abe9393be054b5cbee87cb234ce4c31b8d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4490dd973061dacdb324f4f804cac62bba604b2ffe4b98d100853749ae1a62e2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4bb99eb30077bdd7e744232afbab8c8ceaaf6b05f1afd41f72f56939a7cb990"
-    sha256 cellar: :any_skip_relocation, ventura:        "055a43f5c4c4f82432be88beade6f1457c2ad0db9c79870629f03a5cf165c086"
-    sha256 cellar: :any_skip_relocation, monterey:       "4acd94762a4e9eb7a1d9bde459e52f82adeee6809faad5139095233c663a92ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f5564f663c6c91ac289fcac38167c3f51ac9191c39310e4c1abc4920ed4b7e45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e412c9cb2ed612d31330ce6199953e0e408ae27f61c720602102d5723ce79efd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f2c24a38d4b489fc346b365671089f0ac45581877d23d63798f1050fe09f5e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a78a0115518a2b5f95a734a6a2c7ea1aba71c704eb3d8a90690b6e0df5a6e29f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "319b8f32bdc9fa3e02690b8274ac1c38c5f902edfa14b2665b031fd3f652f9e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "f19f0da1078c259c40b245372d11346a1057827f9adbc933f7a14e6dde61c824"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a7b084c24875f400696c16f952fc267b2d485b8335f00d6aa0c404634a9816e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "185ff24c0348b2fb8dd474325f70e878d2565786ffea011dde901d7717099ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdffa8ebea96ee1945d255816ee83aa0d96e064f487c36dfb8b241c0786bc150"
   end
 
-  depends_on "go" => :build
+  # TODO: Try `go@1.20` or newer on the next release
+  depends_on "go@1.19" => :build
   depends_on "loki" => :test
 
   resource "testdata" do

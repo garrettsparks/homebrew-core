@@ -3,19 +3,18 @@ class CharmTools < Formula
 
   desc "Tools for authoring and maintaining juju charms"
   homepage "https://github.com/juju/charm-tools"
-  url "https://files.pythonhosted.org/packages/eb/e1/684dbbf7a11274a4a5bce15d2cc7c4a054b88b1c51b087d8b3c74a051184/charm-tools-3.0.4.tar.gz"
-  sha256 "47725b0c71baeffc25c2b788fd84a4720bd66ca87515d7a9a28a3acc7cfe0107"
+  url "https://files.pythonhosted.org/packages/5c/44/d865757925098ad4957c02401bed5b7642db2f794a2c4f348ab165e115ab/charm-tools-3.0.5.tar.gz"
+  sha256 "9dc2e8a688033a342f0f840b82d5ba4f118fcc2590085a4153001dcfeea54125"
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "5dfb2c48f84564d834cb756fc093b07b237deafb385c41411fa1d0eaa2730c98"
-    sha256 cellar: :any,                 arm64_monterey: "f7cec17ebe0101995730d24a842871b2c855fc1411e1d234d1e9f71396508a8a"
-    sha256 cellar: :any,                 arm64_big_sur:  "5edae9c2c4b545c8d37b75ff7475d0cebd941a439f2dbf67534c2d19f9e38acd"
-    sha256 cellar: :any,                 ventura:        "cced70eaf63bd0dfddc1a6b234fc872c602443807bf64c45d88d41362a6d0b33"
-    sha256 cellar: :any,                 monterey:       "79f6e3dd241d7b33c040e62597e3036c99499066f86bc146b174091f7dcdda01"
-    sha256 cellar: :any,                 big_sur:        "8f0b1595fdf23de8462d5f49b72fd06bda6ecc09fc1c783c0a7551bcc52d2749"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53076ba95942ba7c16a7cb157218b628db190a2f288a0b83cb650262dd462e2e"
+    sha256 cellar: :any,                 arm64_ventura:  "2a8382cd1aff8aabdbbf3980e158fc02b3930bc7ad331c668c425fab8cb1f088"
+    sha256 cellar: :any,                 arm64_monterey: "b22238c85fe17dbaedae756874250c550196f12610cc5f696cb894fddda77d91"
+    sha256 cellar: :any,                 arm64_big_sur:  "ba7781b612b3e105f78eced45fbcfb85a134ae6134639054aa220a5fe6197dd1"
+    sha256 cellar: :any,                 ventura:        "707ee313070c9cf9ecb91e08f7c58b3e4687565f331b3ec73f7864134cde9570"
+    sha256 cellar: :any,                 monterey:       "6bc611db5f1e2b90be66a266ed80b6ab1cb76f207ed4e50bf8fdb1122f0c31ae"
+    sha256 cellar: :any,                 big_sur:        "79a4a0918b723368bea484156fdefec973f64db232b0503b071309cd66956472"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b14471023f91dd4b5d356303fb60650bdf161180b7fba4d0f80cc9b1742629f"
   end
 
   depends_on "rust" => :build
@@ -208,13 +207,13 @@ class CharmTools < Formula
   end
 
   resource "types-docutils" do
-    url "https://files.pythonhosted.org/packages/9d/8e/f71b3ab0b2a20143c9ad8d072ce638dda5a5958bb17befd390b26dd6489f/types-docutils-0.19.1.3.tar.gz"
-    sha256 "36fe30de56f1ece1a9f7a990d47daa781b5af831d2b3f2dcb7dfd01b857cc3d4"
+    url "https://files.pythonhosted.org/packages/e5/c0/adbf5dd6a48ecb9e1ab70321294a17108960c6de11db686d277bc2e7d68a/types-docutils-0.19.1.4.tar.gz"
+    sha256 "1b64b21b609ff1fc7791d3d930f14b56b36ad09029fd97e45e34cc889d671b5f"
   end
 
   resource "types-setuptools" do
-    url "https://files.pythonhosted.org/packages/d0/e0/c551d49faedf9db1b4c4e061e90ac258189f0f6bfb7f3ade3a1cba20296a/types-setuptools-67.2.0.1.tar.gz"
-    sha256 "07648088bc2cbf0f2745107d394e619ba2a747f68a5904e6e4089c0cb8322065"
+    url "https://files.pythonhosted.org/packages/62/d0/7df9c20c727fc4c9cc4b389dee6f429ef6bed4604677885029d3c6d70ab5/types-setuptools-67.3.0.1.tar.gz"
+    sha256 "1a26d373036c720e566823b6edd664a2db4d138b6eeba856721ec1254203474f"
   end
 
   resource "urllib3" do
@@ -238,8 +237,8 @@ class CharmTools < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/1f/29/54ba1934c45af649698410456fa8a78a475c82efd5c562e51011079458d1/zipp-3.12.1.tar.gz"
-    sha256 "a3cac813d40993596b39ea9e93a18e8a2076d5c378b8bc88ec32ab264e04ad02"
+    url "https://files.pythonhosted.org/packages/d1/2f/ba544a8a6ad5ad9dcec1b00f536bb9fb078f5f50d1a1408876de18a9151b/zipp-3.13.0.tar.gz"
+    sha256 "23f70e964bc11a34cef175bc90ba2914e1e4545ea1e3e2f67c079671883f9cb6"
   end
 
   def install

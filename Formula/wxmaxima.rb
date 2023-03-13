@@ -1,18 +1,18 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://wxmaxima-developers.github.io/wxmaxima/"
-  url "https://github.com/wxMaxima-developers/wxmaxima/archive/Version-23.02.0.tar.gz"
-  sha256 "56323c2d3884df4f6c88aab0e1b3f026c4c9af5830f0648210dc3540f9b290d5"
+  url "https://github.com/wxMaxima-developers/wxmaxima/archive/Version-23.03.0.tar.gz"
+  sha256 "eedaa082353ad2526099982e4e6b4497355ed558464ece576876d6e6941e5e6e"
   license "GPL-2.0-or-later"
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "6f74e4c363edb4dc0b8ab62109ab7862c053be507f1906eae6184a3f06ade621"
-    sha256 arm64_monterey: "94515265d74da6227d9073cb3d96150053f6ab62f61c7251d82b16a5ea2c3bca"
-    sha256 arm64_big_sur:  "84d39b3fec61ef36853febce70cc1ca7c813d89d166656828a356ae8c3b266d9"
-    sha256 ventura:        "0e29da4d1464fafee4e1eeb9a07531f8cdf7e3c86e5f1c2e9ae804edfb8f0af3"
-    sha256 monterey:       "5728f0d663b611c5796c79fd15f03fa18d6d5de6f824a483ce7ebe36b62f7c9c"
-    sha256 big_sur:        "5660e9817816b506afd3e437570318907307c5b0f884aeec3ddfd21e089e8261"
+    sha256 arm64_ventura:  "8768e12f524ecb1329a4289bcca17b682f9905289eae92f346945597068da542"
+    sha256 arm64_monterey: "8ddfa98b34f7fb7a7a16ff099b79f9d7dbeeecfce5798b2306c47fc2669474f9"
+    sha256 arm64_big_sur:  "20e1d033e91bf84aa4d44fb53fe31d36ce626f4ce5d05616d62eb37fc898ecec"
+    sha256 ventura:        "1266cb56c7309c3a1c9573237c1d0baa0467ea853591cd936efa02fc14abb9ba"
+    sha256 monterey:       "4fdf6f30f72f38bc5536b7bb4b5a47f59a418905e6c1e4e4e5ed1175781f1bd0"
+    sha256 big_sur:        "d08b7f0e10d6082066a165c162563ee25948fdf3d0676fd3632b7b66bb06dda6"
   end
 
   depends_on "cmake" => :build

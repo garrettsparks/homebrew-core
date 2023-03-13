@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://github.com/vespa-engine/vespa/archive/v8.121.38.tar.gz"
-  sha256 "857020ffe1a6e0adc16233c01d73fd4ecc70866ce37f5412fcd432300749a949"
+  url "https://github.com/vespa-engine/vespa/archive/v8.132.43.tar.gz"
+  sha256 "35612af892893be9f9d1dbe02919ea0532e32d95f1765b2c200aa73aedc105d5"
   license "Apache-2.0"
 
   livecheck do
@@ -12,22 +12,16 @@ class VespaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "354a8022564b3da9075feac424a21c9327c9db54b4638e737dd740d5ed86ccac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b558133112e72341a2f92cc69e9da1d9ec9024e3a6636d42de99aaca0c9f0b5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "573dd2956ec3b55b316e47ff3abaae86433dc3f66b18a5354336033a4e6fda67"
-    sha256 cellar: :any_skip_relocation, ventura:        "dfd92187956760be45e683e1b99c5ed34cf60e6c427c516f965a9ece42841deb"
-    sha256 cellar: :any_skip_relocation, monterey:       "67b3a0fe8ce89cd6f899236e4ad46b886d0dbe6512e8580d016fb0050b987fb2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "149ddff058a1a4e8a75ca9bc48788f8a1b033394dcba987487a598d4f30884e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6504eb9998f7cd6054178698977b4d83c836882030426fa3626c41078e0cee6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e3c7e1d64167d67a2b4e05b7ad692d7163959085528609fdcf5a0091943563f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6669eea0b838929f32f1a39d15bfa95982d27503340061f78628f12f0eeab6a6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dbc11831f6c28908c879d8289fc76e937206184a82d195eefeb52d0da491c816"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1df40df464c69177361d800ba959338c485225abb40072cf4f320637e769c31"
+    sha256 cellar: :any_skip_relocation, monterey:       "77d2f4f72fca0abc063cdf31c03131ad7475956a4fd06d387992ce4b7ec30e5a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "20d7248fcb31157d8f72564ed1b46a6bfb10f024a87a91cc4b97b273a372f5fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0d7a7534b55078b371ba346b104e1abf2002975da68a2a44e6e3e3d3e15ac26"
   end
 
   depends_on "go" => :build
-
-  # patch the version override, remove in next release
-  patch do
-    url "https://github.com/vespa-engine/vespa/commit/121cc99584a9d99950c4037162c43b5f583a312d.patch?full_index=1"
-    sha256 "7002a836d8424dccc593435b9c8bb97f95d6cc8f78a4938f2f91ac5da8ed2c89"
-  end
 
   def install
     cd "client/go" do

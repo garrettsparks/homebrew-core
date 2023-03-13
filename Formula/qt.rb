@@ -4,6 +4,8 @@ class Qt < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   url "https://download.qt.io/official_releases/qt/6.4/6.4.2/single/qt-everywhere-src-6.4.2.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.4/6.4.2/single/qt-everywhere-src-6.4.2.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.4/6.4.2/single/qt-everywhere-src-6.4.2.tar.xz"
   sha256 "689f53e6652da82fccf7c2ab58066787487339f28d1ec66a8765ad357f4976be"
   license all_of: [
     "BSD-3-Clause",
@@ -12,7 +14,7 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 1
+  revision 2
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,
@@ -23,13 +25,14 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a0f5604e855d45eff79de612c11b561d637c4da60c0e5ee2e1741196913f0b88"
-    sha256 cellar: :any,                 arm64_monterey: "48ffc4065dd5f47b9a4b4db85809aea6a4a7a45cc8fbd0190136b2e984ca84dd"
-    sha256 cellar: :any,                 arm64_big_sur:  "fabbdf9bbe7d07f337580e906e0a1304068d2c2a34ed9d792dd6b4478f63150f"
-    sha256 cellar: :any,                 ventura:        "ed67c9682499259d51678b1fd491b1aff19528bbfbb9ddcfaf304080a81d64b8"
-    sha256 cellar: :any,                 monterey:       "0076c1ac4d9ae7e82c098f1de91e04c8bb53d3a2a5f6eabc7bea036beee530ae"
-    sha256 cellar: :any,                 big_sur:        "af6d693fae6c9f5961c1e25cd418cd5a689894306ee1b14458664b5c9b7f5120"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "196dbb17d1012a0fd39e560304a6f510168a5a990ccd3d7d28993ca3e5d2966b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "317951f1b836fece38f97fb936147beab7f80b625876ea52466d109b81c9e45d"
+    sha256 cellar: :any,                 arm64_monterey: "ebcc6f3ac45d6f04cda36ff264ffbd6db23c204d35cec51a9cb2d28a77e1f3e1"
+    sha256 cellar: :any,                 arm64_big_sur:  "d4cda62ec74850293c2eaaf6dcef6fbfb00f0414e59cd427cfc8fc103428e3a7"
+    sha256 cellar: :any,                 ventura:        "5f26fa0a76419d504ebc4ef9ede6a00f249f0c0fbb4ab12c5ffb91ea2134a2ae"
+    sha256 cellar: :any,                 monterey:       "c0b5aa8d5e08a834a1b034fb57921a97efb36501809b266ac65a128c1baa13b1"
+    sha256 cellar: :any,                 big_sur:        "b8952ac78246fc8f435fdbb5662f2b25c83d9810d3c7e297a98b2e52df9600df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b19257e9549b41f382e75eaed8cbacf482a092487f93312a145f4926e742ad6e"
   end
 
   depends_on "cmake"      => [:build, :test]
@@ -246,12 +249,54 @@ class Qt < Formula
       include.install_symlink f/"Headers" => f.stem
     end
 
+    # Install a qtversion.xml to ease integration with QtCreator
+    # As far as we can tell, there is no ability to make the Qt buildsystem
+    # generate this and it's in the Qt source tarball at all.
+    # Multiple people on StackOverflow have asked for this and it's a pain
+    # to add Qt to QtCreator (the official IDE) without it.
+    # Given Qt upstream seems extremely unlikely to accept this: let's ship our
+    # own version.
+    # If you read this and you can eliminate it or upstream it: please do!
+    # More context in https://github.com/Homebrew/homebrew-core/pull/124923
+    qtversion_xml = share/"qtcreator/QtProject/qtcreator/qtversion.xml"
+    qtversion_xml.dirname.mkpath
+    qtversion_xml.write <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE QtCreatorQtVersions>
+      <qtcreator>
+      <data>
+        <variable>QtVersion.0</variable>
+        <valuemap type="QVariantMap">
+        <value type="int" key="Id">1</value>
+        <value type="QString" key="Name">Qt %{Qt:Version} (#{HOMEBREW_PREFIX})</value>
+        <value type="QString" key="QMakePath">#{opt_bin}/qmake</value>
+        <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop</value>
+        <value type="QString" key="autodetectionSource"></value>
+        <value type="bool" key="isAutodetected">false</value>
+        </valuemap>
+      </data>
+      <data>
+        <variable>Version</variable>
+        <value type="int">1</value>
+      </data>
+      </qtcreator>
+    XML
+
     return unless OS.mac?
 
     bin.glob("*.app") do |app|
       libexec.install app
       bin.write_exec_script libexec/app.basename/"Contents/MacOS"/app.stem
     end
+  end
+
+  def caveats
+    <<~EOS
+      You can add Homebrew's Qt to QtCreator's "Qt Versions" in:
+        Preferences > Qt Versions > Link with Qt...
+      pressing "Choose..." and selecting as the Qt installation path:
+        #{HOMEBREW_PREFIX}
+    EOS
   end
 
   test do
@@ -315,7 +360,6 @@ class Qt < Formula
         Q_ASSERT(QSqlDatabase::isDriverAvailable("QSQLITE"));
         const auto &list = QImageReader::supportedImageFormats();
         QVulkanInstance inst;
-        // See https://github.com/actions/runner-images/issues/1779
         // if (!inst.create())
         //   qFatal("Failed to create Vulkan instance: %d", inst.errorCode());
         for(const char* fmt:{"bmp", "cur", "gif",

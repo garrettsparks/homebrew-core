@@ -1,19 +1,19 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://github.com/facebook/wangle/releases/download/v2023.02.13.00/wangle-v2023.02.13.00.tar.gz"
-  sha256 "ff783eb21adf9eda48fde60a06ee7bbb3af174427cb084e197b2a890615146b3"
+  url "https://github.com/facebook/wangle/releases/download/v2023.03.13.00/wangle-v2023.03.13.00.tar.gz"
+  sha256 "037db6cdcbdd1c5ba1613f7ee27e04a61dcce1b19163b64d0150fc5232761c58"
   license "Apache-2.0"
   head "https://github.com/facebook/wangle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bded2716baeb84a8b16c2c8c16b0cea38d514ee40e9858e3e836501aa081a86c"
-    sha256 cellar: :any,                 arm64_monterey: "4ded8545724e70a4d79a8e4ecc73127ab6677efa94250853398be56abf31947d"
-    sha256 cellar: :any,                 arm64_big_sur:  "0af4024e00ab407cdceac4589ffaf154cd68c0f0f93cfcc57b50ff83d54c9241"
-    sha256 cellar: :any,                 ventura:        "0c762e91a575c19eced85633f525e0b103a203546342bb6978c3f13907b15f6a"
-    sha256 cellar: :any,                 monterey:       "ac34881c137316994b707502e074f57b24fc19df64d7e55dcbcd10d3365984bc"
-    sha256 cellar: :any,                 big_sur:        "e482ba645e1b1f7618d7a03b3e90c59f7f8f78fd74c382a36c36ff073204fb2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b6908781a2327eb48e49d5284120c5e19cceccef1b1d53b2ea76a489e439d83"
+    sha256 cellar: :any,                 arm64_ventura:  "7993db974bc3e5d09bb3997a4e013598f3d2f19a8d15441724c5c63ab682aec4"
+    sha256 cellar: :any,                 arm64_monterey: "8db6016557202767acd6f2c1683bb3ea1f9f03062d2477b30022ba848fb5aac1"
+    sha256 cellar: :any,                 arm64_big_sur:  "20634125526ffa31db358d88bbd21a807385ab5cf0b5755f329df87f0de81de5"
+    sha256 cellar: :any,                 ventura:        "ff01742db58fd23f31dd9f041e950ea2df30e78f155a0528bfadbfa20a4e22d8"
+    sha256 cellar: :any,                 monterey:       "6171d57a1ff2873b55b13746cfbe23597964a2835c075aeb355a0ba0774baad4"
+    sha256 cellar: :any,                 big_sur:        "d2fa0f42d0cadb770fd424ef1f94b4ef73d2ae356aa7591b02b51b11929fde39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86c3100b03e510f409c5609f7b7954a19ac3c87fd3d5f65ed0e5e33c886d491f"
   end
 
   depends_on "cmake" => :build

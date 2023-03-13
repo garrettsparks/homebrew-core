@@ -3,18 +3,17 @@ require "language/node"
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.9.1.tgz"
-  sha256 "13643c2c29fa4b5c7293161b42fed27112b51e0f7f315f9cbece40fbf37ff45b"
+  url "https://registry.npmjs.org/code-server/-/code-server-4.10.1.tgz"
+  sha256 "68825be6f1e5dc3319963f75cc0e2834bb169d63b353f1b3653c1fc46e64197b"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23db1042d30fff79757d2af6ccf1fe01dde644d71d38d6dbcc51505704c8bf4a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d9245a000a9a299c17511a5f738256648520cb0a0cbb0680752415b0b1bb4d8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df0e75897e1f82f1daf0d1f57ed3b705d114e072766fbeefc9cfc034b6956457"
-    sha256 cellar: :any_skip_relocation, ventura:        "3bd1f0db93df3e04a821bf9baa474abb7a6bd355f1042218d5bd2759dde9273d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8ed063098474f9ee779c4f1ab9df7690778e6ef22d0e0e18a0271a9bef6851f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8f85bdaa4ce540716f762658bd5fdd4be92985ebf25480191eadfa19ba442101"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f212f825249b384339566adb3fa369d850debf3ecd8bfbd1d330844b37223f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bbee41082cc46b824361f22e3a5ce85f37b991d178a9726ad67ba9f1b84c0b0b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7c95911a9ff779dd474dfcfdc566ec07ee8afbd2dd2f4d7a7d32470507b32fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "a5b483a5201d666d283849c94120bc52b75d3cd6f367acb52dabe9bffd7ec976"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c961766e78ce941510c40f39af236d966fd4cee70de97b7bdc3785d20bffe1d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "97d1b691c3a7285b012f591656930a3690087ddf9760ae1f9ef5d1f12138ccd5"
   end
 
   depends_on "bash" => :build

@@ -1,9 +1,9 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.19.5.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.19.5.src.tar.gz"
-  sha256 "8e486e8e85a281fc5ce3f0bedc5b9d2dbf6276d7db0b25d3ec034f313da0375f"
+  url "https://go.dev/dl/go1.20.2.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.20.2.src.tar.gz"
+  sha256 "4d0e2850d197b4ddad3bdb0196300179d095bb3aefd4dfbc3b36702c3728f8ab"
   license "BSD-3-Clause"
   head "https://go.googlesource.com/go.git", branch: "master"
 
@@ -13,22 +13,22 @@ class Go < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "9e45e8c058b38e85608717871c18e8a4236f7e8895938388081fc3b873e7da35"
-    sha256 arm64_monterey: "e97b3a6221357290a48fba6bd88c39ccce5d0d48927a657a810f4932465ab62a"
-    sha256 arm64_big_sur:  "38d5820da5d75b9956e85edf5e85a386e3f39b585389ae5fcb118827b045dea6"
-    sha256 ventura:        "8249f690a7898697a6c6c0a5bb21cd5b80739b65553c94ac0bb62348989aa3e9"
-    sha256 monterey:       "06020b3d11c2be4fc8318561203e7435c484773475b836496303cb1c6225ae0a"
-    sha256 big_sur:        "1863c55cd86258e10ac6b7e3a3e3da12074d7783f81e864f3b43c5c288f59d8f"
-    sha256 x86_64_linux:   "4060878a09c55ce7bd3b1093829a5e01622be31816c368f8fcaf07e38bca1fb9"
+    sha256 arm64_ventura:  "3517ed5d96d5a40cd4c44a35f7799a239b82d9855a6799c6f60193768f9825cd"
+    sha256 arm64_monterey: "3517ed5d96d5a40cd4c44a35f7799a239b82d9855a6799c6f60193768f9825cd"
+    sha256 arm64_big_sur:  "3517ed5d96d5a40cd4c44a35f7799a239b82d9855a6799c6f60193768f9825cd"
+    sha256 ventura:        "ea6a2d446679fd9bc460425f3fce2e1c4a27504c6e6ad2cd9c8f7380fc75988a"
+    sha256 monterey:       "ea6a2d446679fd9bc460425f3fce2e1c4a27504c6e6ad2cd9c8f7380fc75988a"
+    sha256 big_sur:        "ea6a2d446679fd9bc460425f3fce2e1c4a27504c6e6ad2cd9c8f7380fc75988a"
+    sha256 x86_64_linux:   "dabdff435af1ef8289dbfe4313cb190f5c61cb46b3b845b37d79beaf38c2434b"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do
     checksums = {
-      "darwin-arm64" => "4dac57c00168d30bbd02d95131d5de9ca88e04f2c5a29a404576f30ae9b54810",
-      "darwin-amd64" => "6000a9522975d116bf76044967d7e69e04e982e9625330d9a539a8b45395f9a8",
-      "linux-arm64"  => "3770f7eb22d05e25fbee8fb53c2a4e897da043eb83c69b9a14f8d98562cd8098",
-      "linux-amd64"  => "013a489ebb3e24ef3d915abe5b94c3286c070dfe0818d5bca8108f1d6e8440d2",
+      "darwin-arm64" => "e4ccc9c082d91eaa0b866078b591fc97d24b91495f12deb3dd2d8eda4e55a6ea",
+      "darwin-amd64" => "c101beaa232e0f448fab692dc036cd6b4677091ff89c4889cc8754b1b29c6608",
+      "linux-arm64"  => "914daad3f011cc2014dea799bb7490442677e4ad6de0b2ac3ded6cee7e3f493d",
+      "linux-amd64"  => "4cdd2bc664724dc7db94ad51b503512c5ae7220951cac568120f64f8e94399fc",
     }
 
     arch = "arm64"
@@ -42,7 +42,7 @@ class Go < Formula
       platform = "linux"
     end
 
-    boot_version = "1.16"
+    boot_version = "1.17.13"
 
     url "https://storage.googleapis.com/golang/go#{boot_version}.#{platform}-#{arch}.tar.gz"
     version boot_version
@@ -55,10 +55,9 @@ class Go < Formula
 
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
-      system "./make.bash", "--no-clean"
+      system "./make.bash"
     end
 
-    (buildpath/"pkg/obj").rmtree
     rm_rf "gobootstrap" # Bootstrap not required beyond compile.
     libexec.install Dir["*"]
     bin.install_symlink Dir[libexec/"bin/go*"]

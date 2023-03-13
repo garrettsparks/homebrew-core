@@ -1,19 +1,19 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/v2023.02.13.00.tar.gz"
-  sha256 "e2aaf9f95682af34ab27c8b88ebb3007919dc8e78765a8ba042839ef91c3c6a9"
+  url "https://github.com/facebook/fbthrift/archive/v2023.03.13.00.tar.gz"
+  sha256 "689509d03ddc02b7f7fdc7cb71140a6509eaf869d84720654a25fbdf0af91a71"
   license "Apache-2.0"
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6bb3aad4359fb20d326649fb5358fc19f30b89349984eeaf77ef4ffa923818e1"
-    sha256 cellar: :any,                 arm64_monterey: "2af159afdbc42dc94ed820276c89cb9d4d43b675c180e6cb6eb7576a9de2eb36"
-    sha256 cellar: :any,                 arm64_big_sur:  "1c03c3f4141ebb76090e01a46765a4fa8b82b8a9e13d5a1e411de9eb76c76a5d"
-    sha256 cellar: :any,                 ventura:        "a09014ac0d0079ee94ae5275ebb6322f6b6b79749a0c9a1956adb31e0d2a4123"
-    sha256 cellar: :any,                 monterey:       "13f271ebc347c1b20f79b30708ed6f06f842b514cf4e1fb5d8f5c89ae3e95500"
-    sha256 cellar: :any,                 big_sur:        "4c42af8aff0b196a08e5a4d52851f5311d17a266785b9c2902cfabd4bc4d92db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23d096f2bd050fb431d5ab4c9a7213005badfa844624177ccc4f0235c5ce1cfb"
+    sha256 cellar: :any,                 arm64_ventura:  "4a4a7427e3ac4580f3b7178977a4a7a13262bfe82507a78bdae336856d07a481"
+    sha256 cellar: :any,                 arm64_monterey: "d3442e98fb43baa9b2c1bb330a168cdd153a920c09dbe4716b14fee4d79ee2e3"
+    sha256 cellar: :any,                 arm64_big_sur:  "85d3ca525da816aecef989b92b580c089b6512a726e15c7a9a00eb90a4d7087b"
+    sha256 cellar: :any,                 ventura:        "ff6832f06b463202b3ee37fa76d5017d1c61b44801aaf3559ca691c46666b69b"
+    sha256 cellar: :any,                 monterey:       "ed4f4204f5e920a64d031c3386c62e15155ab7b8daa27a1a46fafa2642ff4eb7"
+    sha256 cellar: :any,                 big_sur:        "b31e32bb7485812b770bce8fb34cf15919f3e1fb2ead8c72996f4ffe6906ea0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5b3478a433903458285751703c1246437fb8c0ac548903457c357938b4c8a93"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+

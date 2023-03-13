@@ -2,6 +2,9 @@
   "anime-downloader": {
     "exclude_packages": ["six", "tabulate"]
   },
+  "animdl": {
+    "exclude_packages": ["pygments", "pyyaml"]
+  },
   "ansible": {
     "extra_packages": [
       "apache-libcloud", "boto3", "dnspython", "docker", "junos-eznc", "jxmlease", "kerberos", "ntc-templates",
@@ -103,6 +106,9 @@
     "extra_packages": ["certbot-apache", "certbot-nginx"],
     "exclude_packages": ["six"]
   },
+  "cffi": {
+    "exclude_packages": ["pycparser"]
+  },
   "coconut": {
     "exclude_packages": ["Pygments"]
   },
@@ -141,6 +147,10 @@
     "exclude_packages": ["six"]
   },
   "conan": {
+    "exclude_packages": ["six", "PyYAML", "Pygments"],
+    "extra_packages": ["distro"]
+  },
+  "conan@1": {
     "exclude_packages": ["six", "PyYAML", "Pygments"],
     "extra_packages": ["distro"]
   },
@@ -207,7 +217,10 @@
   },
   "dvc": {
     "package_name": "dvc[all]",
-    "exclude_packages": ["protobuf", "pyarrow", "six", "tabulate", "PyYAML", "typing-extensions", "Pygments"]
+    "exclude_packages": [
+      "cffi", "PyYAML", "Pygments", "protobuf", "pyarrow", "pycparser",
+      "pygit2", "six", "tabulate", "typing-extensions"
+    ]
   },
   "dxpy": {
     "exclude_packages": ["six"]
@@ -270,6 +283,9 @@
   "git-remote-codecommit": {
     "exclude_packages": ["six"]
   },
+  "gitless": {
+    "exclude_packages": ["pygit2"]
+  },
   "gitlint": {
     "exclude_packages": ["six"]
   },
@@ -320,6 +336,9 @@
     "package_name": "jinja2-cli[yaml,toml,xml]",
     "exclude_packages": ["PyYAML"]
   },
+  "johnnydep": {
+    "exclude_packages": ["six", "tabulate", "PyYAML"]
+  },
   "jrnl": {
     "exclude_packages": ["six", "Pygments"]
   },
@@ -350,8 +369,14 @@
   "legit": {
     "exclude_packages": ["six"]
   },
+  "linode-cli": {
+    "exclude_packages": ["PyYAML"]
+  },
   "liquidctl": {
     "exclude_packages": ["pillow"]
+  },
+  "litani": {
+    "exclude_packages": ["PyYAML"]
   },
   "litecli": {
     "exclude_packages": ["six", "tabulate", "Pygments"]
@@ -437,6 +462,9 @@
   "onlykey-agent": {
     "exclude_packages": ["six", "Cython"]
   },
+  "openai-whisper": {
+    "exclude_packages": ["torch", "numpy", "PyYAML", "huggingface_hub"]
+  },
   "openstackclient": {
     "extra_packages": ["python-heatclient", "python-octaviaclient"],
     "exclude_packages": ["six", "PyYAML"]
@@ -506,6 +534,9 @@
   "pydocstyle": "pydocstyle[toml]",
   "pygitup": {
     "exclude_packages": ["typing-extensions"]
+  },
+  "pygit2": {
+    "exclude_packages": ["cffi", "pycparser"]
   },
   "pylint": {
     "exclude_packages": ["isort", "typing-extensions"]
@@ -635,7 +666,7 @@
     "exclude_packages": ["tabulate", "six"]
   },
   "sslyze": {
-    "exclude_packages": ["typing-extensions"]
+    "exclude_packages": ["typing-extensions", "pycparser"]
   },
   "stormssh": {
     "exclude_packages": ["six"]

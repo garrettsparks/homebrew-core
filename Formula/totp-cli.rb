@@ -1,19 +1,20 @@
 class TotpCli < Formula
   desc "Authy/Google Authenticator like TOTP CLI tool written in Go"
   homepage "https://yitsushi.github.io/totp-cli/"
-  url "https://github.com/yitsushi/totp-cli/archive/v1.2.5.tar.gz"
-  sha256 "8fae64e9d76dbc50553682ccb0c99cc0f70c52cb56710d1423215bb2f5f6b58c"
+  url "https://github.com/yitsushi/totp-cli/archive/v1.2.6.tar.gz"
+  sha256 "ff64b624a9ac5c1afcb8d0ae506439e0e7048db976d4e4940a9e5a0ff7f8e107"
   license "MIT"
   head "https://github.com/yitsushi/totp-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23e731ae57f502b192462c648f3050be7da008684242dcc32ffe900064aaf20b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23e731ae57f502b192462c648f3050be7da008684242dcc32ffe900064aaf20b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23e731ae57f502b192462c648f3050be7da008684242dcc32ffe900064aaf20b"
-    sha256 cellar: :any_skip_relocation, ventura:        "6fbe20f89fbda452c97ae016202fc148bec5f29afdc15dfb287d5d200460c290"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fbe20f89fbda452c97ae016202fc148bec5f29afdc15dfb287d5d200460c290"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6fbe20f89fbda452c97ae016202fc148bec5f29afdc15dfb287d5d200460c290"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8de84eebe6022c9589d8454a024bd84e48d10820b9dfd058d4aa669fb72498b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d55ff097af79ea814ab863807ea0da863a6d7f81f7ddeaf52a39626ecb11c0ae"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d55ff097af79ea814ab863807ea0da863a6d7f81f7ddeaf52a39626ecb11c0ae"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d55ff097af79ea814ab863807ea0da863a6d7f81f7ddeaf52a39626ecb11c0ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "6224212bb66dcde7d63577a68a6c7009f310a098685d112af0570a2bdc86fc23"
+    sha256 cellar: :any_skip_relocation, monterey:       "6224212bb66dcde7d63577a68a6c7009f310a098685d112af0570a2bdc86fc23"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6224212bb66dcde7d63577a68a6c7009f310a098685d112af0570a2bdc86fc23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c9ebfd82da77e953c0398724cb97ece537458954858f5b51965d027f62b9ca1"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,6 @@ class TotpCli < Formula
 
   test do
     assert_match "generate", shell_output("#{bin}/totp-cli help")
-    assert_match "Password", pipe_output("#{bin}/totp-cli list 2>&1", "")
+    assert_match "storage error", pipe_output("#{bin}/totp-cli list 2>&1", "")
   end
 end

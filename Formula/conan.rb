@@ -3,19 +3,19 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/f0/f1/876a916cd7a5f89d838842cb3d3c52251aeaa6dabc92db0f53b9c417e610/conan-1.58.0.tar.gz"
-  sha256 "001039c40b523ac3b26bb675eb90887760b06c657a0d10d60157e382ba2f9b73"
+  url "https://files.pythonhosted.org/packages/46/e7/8ae796a11c812aadcd83cffda62a2ec5500227c84ada1cb9a99adb43b3a6/conan-2.0.1.tar.gz"
+  sha256 "9707243afa5b97ab3278ded4f6a1519a5ae2ac4832d3fa7d24bbc9243dea1f35"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "450a9ecdd23e0e8c2be6879e0ae40d411dca83096712df74a5b88feb4a668cfb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a669d73e5d831becb8be1ad5c262ca0245c56b745a2d49999dd083fa0d748925"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "72cb262077f03a2cba8fb8372e2fc45200359c84bbe3eab09ecf7d96b0f42932"
-    sha256 cellar: :any_skip_relocation, ventura:        "d754abc68e007fd28e03a23f31d7fbff2a844c5eb9b9b940a4f8fc42a2873971"
-    sha256 cellar: :any_skip_relocation, monterey:       "7fdb00cca7bec1c854dd9c5e797f8e453d4707182b4f47aef5744a3d5a4823fb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a17ece177b2aba28e65da453a037ca5231dc85ce44dd8f189b877f7739f91304"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e24135ba1f784f5be5252ccac74d314a7186ddacada30d582cb0cefc4851372e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6c2117cb35fa31c9867aff589753b5377d59acc0f6bdcac36f5b405e1aa4b94"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1517e90c9c3595d16fa243524f4777e95aee61aa6f5877dc28304abd07d661df"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2fa67e5259a6f92d7e443d660b37e6060b9459663d473417af9d144a1804b12"
+    sha256 cellar: :any_skip_relocation, ventura:        "7dec3e19c028f1b2bc3ec9f31fd6ef780c4019ec5784e8a24a3883da292b4ba3"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6c7362b6b834990f0a949cf18323dac365a83804667fc078f9469ade1a58494"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d7c096885adc999ae6c583801481fd06f0378e364ca7d0b7dbc7b16083ed909b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03ea037ed65d8131358b8ec4405cddf05250c590930e19a7dd61a62613f9a9ca"
   end
 
   depends_on "pkg-config" => :build
@@ -25,11 +25,6 @@ class Conan < Formula
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  resource "bottle" do
-    url "https://files.pythonhosted.org/packages/7c/58/75f3765b0a3f86ef0b6e0b23d0503920936752ca6e0fc27efce7403b01bd/bottle-0.12.23.tar.gz"
-    sha256 "683de3aa399fb26e87b274dbcf70b1a651385d459131716387abdc3792e04167"
-  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
@@ -47,8 +42,8 @@ class Conan < Formula
   end
 
   resource "distro" do
-    url "https://files.pythonhosted.org/packages/b5/7e/ddfbd640ac9a82e60718558a3de7d5988a7d4648385cf00318f60a8b073a/distro-1.7.0.tar.gz"
-    sha256 "151aeccf60c216402932b52e40ee477a939f8d58898927378a02abbe852c1c39"
+    url "https://files.pythonhosted.org/packages/4b/89/eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398/distro-1.8.0.tar.gz"
+    sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"
   end
 
   resource "fasteners" do
@@ -71,24 +66,9 @@ class Conan < Formula
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
 
-  resource "node-semver" do
-    url "https://files.pythonhosted.org/packages/f1/4e/1d9a619dcfd9f42d0e874a5b47efa0923e84829886e6a47b45328a1f32f1/node-semver-0.6.1.tar.gz"
-    sha256 "4016f7c1071b0493f18db69ea02d3763e98a633606d7c7beca811e53b5ac66b7"
-  end
-
   resource "patch-ng" do
     url "https://files.pythonhosted.org/packages/c1/b2/ad3cd464101435fdf642d20e0e5e782b4edaef1affdf2adfc5c75660225b/patch-ng-1.17.4.tar.gz"
     sha256 "627abc5bd723c8b481e96849b9734b10065426224d4d22cd44137004ac0d4ace"
-  end
-
-  resource "pluginbase" do
-    url "https://files.pythonhosted.org/packages/f3/07/753451e80d2b0bf3bceec1162e8d23638ac3cb18d1c38ad340c586e90b42/pluginbase-1.0.1.tar.gz"
-    sha256 "ff6c33a98fce232e9c73841d787a643de574937069f0d18147028d70d7dee287"
-  end
-
-  resource "PyJWT" do
-    url "https://files.pythonhosted.org/packages/75/65/db64904a7f23e12dbf0565b53de01db04d848a497c6c9b87e102f74c9304/PyJWT-2.6.0.tar.gz"
-    sha256 "69285c7e31fc44f68a1feb309e948e0df53259d579295e6cfe2b1792329f05fd"
   end
 
   resource "python-dateutil" do
@@ -101,11 +81,6 @@ class Conan < Formula
     sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
   end
 
-  resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/c1/c2/d8a40e5363fb01806870e444fc1d066282743292ff32a9da54af51ce36a2/tqdm-4.64.1.tar.gz"
-    sha256 "5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"
-  end
-
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
     sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
@@ -116,9 +91,11 @@ class Conan < Formula
   end
 
   test do
-    system bin/"conan", "search", "zlib", "--remote", "conancenter"
-
-    system bin/"conan", "install", "zlib/1.2.11@", "--build"
-    assert_predicate testpath/".conan/data/zlib/1.2.11", :exist?
+    system bin/"conan", "profile", "detect"
+    system bin/"conan", "install", "--requires=zlib/1.2.11",
+                                   "--build=missing",
+                                   "--lockfile-out=conan.lock"
+    lockfile = JSON.parse(File.read("conan.lock", mode: "r"))
+    refute_predicate lockfile["requires"].select { |req| req.start_with?("zlib/1.2.11") }, :empty?
   end
 end

@@ -3,21 +3,20 @@ require "language/node"
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://github.com/contentful/contentful-cli"
-  # 1.19.0 introduced a big code layout change, which is not easy to patch.
-  # TODO: re-add version throttling in next bump
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.0.0.tgz"
-  sha256 "40f6a6be506f5fb0f6fe0c62cfb370f9dc3538377e5f418af43e1ce9b75ce735"
+  # contentful-cli should only be updated every 5 releases on multiples of 5
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.1.5.tgz"
+  sha256 "b78d9ad066495f93ba563ff056a857f736b11224c5bbe752ebf7e8c91532ffb4"
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "366cf89237f634954c361f166eb437da181f12fed6bd666013319c847ea8fcb6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ca899101f1b13ea963e79baaefc2a66b69b64ca79cc5d143256b40d10f661ae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74e8ad308a9bf9095fa02c84456534b593711217232c7d48a93ef3dd206e5979"
-    sha256 cellar: :any_skip_relocation, ventura:        "1360554d7dc905b99dee29e041c42c307d4eb9eb4881482698b48a5ec407513e"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a7c258bed05f1c22ce739882d7fa6dac5bec9821f2ee5bc888bd07199d449d2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8326353b6ccf9c14db507a2f14ebc43481750d604b0bbc2bab2a7c323c08984f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43b37900586eabb15a69480c8dd344bc40980c44ac0121f8af3d6b2098eac69a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "259e2b41976fdd49ba1f269858348b6b95706489495c1ff223a5a2a7736d9edc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "259e2b41976fdd49ba1f269858348b6b95706489495c1ff223a5a2a7736d9edc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "259e2b41976fdd49ba1f269858348b6b95706489495c1ff223a5a2a7736d9edc"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f7a798b993c50ead747a800c235f23d9d93347aba8ccfec96c96790a255a94b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f7a798b993c50ead747a800c235f23d9d93347aba8ccfec96c96790a255a94b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2f7a798b993c50ead747a800c235f23d9d93347aba8ccfec96c96790a255a94b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "259e2b41976fdd49ba1f269858348b6b95706489495c1ff223a5a2a7736d9edc"
   end
 
   depends_on "node"

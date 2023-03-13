@@ -3,8 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-15.0.3.tgz"
-  sha256 "a8defbfe9f1cbc08841c52286321c1a6d0043da8c6063e330082f2e87621c4e9"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-15.0.5.tgz"
+  sha256 "33cd6fd41dc8674da2217f2e032ae16654e182912e65e481d1d7e5ef5929d984"
   license "Apache-2.0"
 
   livecheck do
@@ -13,14 +13,20 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "f5e544b9ea8d97eb61ea5fff604997e01d12c4755b6aac9adc8180f264394c92"
-    sha256                               arm64_monterey: "e667976ce75df0cc33bb8afd0b5f40431c0d3dc66bb26c9e56b27403268a7256"
-    sha256                               arm64_big_sur:  "8e876f59466b88b0b53369d5d244ea2c3394cf31f30aedf732e2e165cfbc278d"
-    sha256                               ventura:        "b31799b2f490542298b7233231f13141df3d4a177ae0af5aee4d05703c33ba3f"
-    sha256                               monterey:       "3b9b7c25e6972deb63a0c143edfe00cd86fab8ac234be9bee4f6000eb1faa709"
-    sha256                               big_sur:        "26021e0182866632d7f9c108cd964937e8d7400937f41b6434f14d8deff94043"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a65813ed2c8eaa8c2d447b053338d0b4f0239b168b4c43f3cbaf31f2da6d1b1"
+    sha256                               arm64_ventura:  "4031f71263e63bae08cd3ebb1591eaf07c3b520c9ab043d9a24bfa30736abde6"
+    sha256                               arm64_monterey: "6fbe3c764a3cbd185fb8871a11a5763bec1d83d68c2991636463825e5fafe9b8"
+    sha256                               arm64_big_sur:  "2e309e8468661d55717a5d7bc7ddaac33ccd6d16b6c5c8b62ccd75d8d85033fe"
+    sha256                               ventura:        "bc09a03b0574b452487aae5f1d8637da0b8062f17b2452630a786c94a3a044c4"
+    sha256                               monterey:       "0034e97cd88d1f148ddef1e70123ebd3be16f4fff42c2d754ac94db3a346ad6b"
+    sha256                               big_sur:        "28700befb6fbd4d718591efa8f0ddf2f5aac30163c7da2ba576b673a39391734"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "142c90a4b220b64a1c30e67b6d194640659d0bc63f676baa98df818350b127f0"
   end
+
+  # Match deprecation date of `node@14`.
+  # TODO: Remove if migrated to `node@18` or `node`. Update date if migrated to `node@16`.
+  # Issue ref: https://github.com/balena-io/balena-cli/issues/2221
+  # Issue ref: https://github.com/balena-io/balena-cli/issues/2403
+  deprecate! date: "2023-04-30", because: "uses deprecated `node@14`"
 
   depends_on "node@14"
 

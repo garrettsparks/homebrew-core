@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.12.0",
-      revision: "f62b2a90f4e6e33abaa3a1158e386599d3abef5a"
+      tag:      "v1.14.0",
+      revision: "8c3e0a7df22216038cb59e9ac321ced5ab929c19"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "8766391c2709af72f631bc36be51675092f9163ec864bf91d3fdf085109a40f8"
-    sha256 cellar: :any, arm64_monterey: "0aa748fb53f1d1e9cd2444a27d198e90d0917b446b6141fa88d3770ad7a7bb20"
-    sha256 cellar: :any, arm64_big_sur:  "6d93b4e8bba536a85e98ad966cf1e6cb9853b34d46177f0f4ff55b43adcb0db7"
-    sha256 cellar: :any, ventura:        "16a8b149fea2a2736e1ad160b10dd12d20e96ca7c9d932d1ebd15c1a9d66ff03"
-    sha256 cellar: :any, monterey:       "30528600259fcbc5c2bf97e950b553551f086e442c223d61b88bf6344ace5290"
-    sha256 cellar: :any, big_sur:        "03b88d52f654854708298f966cae9837429b30390acea8cc56ce056a92b86640"
-    sha256               x86_64_linux:   "f3328f2668280aaf954991a59d68060718c5ed9ae281be060be4c16f69451a27"
+    sha256 cellar: :any, arm64_ventura:  "06e2b5e7e8bd81b702323e08864fece5f6ac23339de8aa0a41d66d8234e22448"
+    sha256 cellar: :any, arm64_monterey: "fd551099d0c22eae85ae4fa9cf72deccf7c5fc6180f5b819de67a281538e5044"
+    sha256 cellar: :any, arm64_big_sur:  "d834d9e16927c90502b51879a94db8618e73b40ca4ace6acf5183ce6840f43c2"
+    sha256 cellar: :any, ventura:        "7cb25c4548d42f7ad9fc4f0e5c80061cc9c29c45d117aa31a71279368f266c0e"
+    sha256 cellar: :any, monterey:       "64a82c6b6d81b5e08bc2fd84a6e9a7978fc597b6c737e3ddc8deda1eee537367"
+    sha256 cellar: :any, big_sur:        "c2af19cf869fadeb6cc513fc826eb7df055b7056f7ea55991e38cdb072340b8e"
+    sha256               x86_64_linux:   "d0bd8bdf8d98506f97d2bb57795ae036d55cfc7aa727a4d0912208084f4ce215"
   end
 
   depends_on "cmake" => :build
@@ -106,8 +106,8 @@ class Semgrep < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/33/e9/ac8a93e9eda3891ecdfecf5e01c060bbd2c44d4e3e77efc83b9c7ce9db32/markdown-it-py-2.1.0.tar.gz"
-    sha256 "cf7e59fed14b5ae17c0006eff14a2d9a00ed5f3a846148153899a0224e2c07da"
+    url "https://files.pythonhosted.org/packages/e4/c0/59bd6d0571986f72899288a95d9d6178d0eebd70b6650f1bb3f0da90f8f7/markdown-it-py-2.2.0.tar.gz"
+    sha256 "7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"
   end
 
   resource "mdurl" do
@@ -121,8 +121,8 @@ class Semgrep < Formula
   end
 
   resource "peewee" do
-    url "https://files.pythonhosted.org/packages/17/c8/8035f2155832580d786c35cb1ce0a89d80a67be522f620878fc294742905/peewee-3.15.4.tar.gz"
-    sha256 "2581520c8dfbacd9d580c2719ae259f0637a9e46eda47dfc0ce01864c6366205"
+    url "https://files.pythonhosted.org/packages/68/a9/3f23e0d8a05e9ec4f6180dc01ec0e73e207e526161ee74647eb1488b613d/peewee-3.16.0.tar.gz"
+    sha256 "1800c0a04962ee99d161c07f5a12fc49549caf5cfcda426a9103e34e37f854ba"
   end
 
   resource "Pygments" do
@@ -160,11 +160,6 @@ class Semgrep < Formula
     sha256 "de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
   end
 
-  resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/c1/c2/d8a40e5363fb01806870e444fc1d066282743292ff32a9da54af51ce36a2/tqdm-4.64.1.tar.gz"
-    sha256 "5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"
-  end
-
   resource "ujson" do
     url "https://files.pythonhosted.org/packages/43/1a/b0a027144aa5c8f4ea654f4afdd634578b450807bb70b9f8bad00d6f6d3c/ujson-5.7.0.tar.gz"
     sha256 "e788e5d5dcae8f6118ac9b45d0b891a0d55f7ac480eddcb7f07263f2bcf37b23"
@@ -186,10 +181,6 @@ class Semgrep < Formula
       ENV["OPAMROOT"] = opamroot
       ENV["OPAMYES"] = "1"
 
-      # Officially suggested workaround for breaking change in setuptools v50.0.0
-      # See: https://sourceforge.net/p/ruamel-yaml/tickets/356/
-      ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
-
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.4.14.0" }
 
@@ -198,6 +189,7 @@ class Semgrep < Formula
 
       # We pass --no-depexts so as to disable the check for pkg-config.
       # It seems to not be found when building on ubuntu
+      # See discussion on https://github.com/Homebrew/homebrew-core/pull/82693
       system "opam", "install", "-y", "--deps-only", "--no-depexts", "./libs/ocaml-tree-sitter-core"
       system "opam", "install", "-y", "--deps-only", "--no-depexts", "./"
 

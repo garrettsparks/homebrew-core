@@ -1,18 +1,18 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://github.com/sigp/lighthouse"
-  url "https://github.com/sigp/lighthouse/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "828f29c0c7d6a0ed311f9e48e4718a8152703bfdd74dc724829760d91f2fd33d"
+  url "https://github.com/sigp/lighthouse/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "5e5c7a5f9ac4dd7d079f43a0e872ba80ed647457a4008be2a61e061cc0226aee"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78e2184df5f5a1b626326933223a615316e6f80726cd755f904a5c8e355f0e89"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "16afbff027cb65406c830105a23ac7cc883a1564d77844cc1b2b27d3799b78a2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bf39a230ea3f75561a3873e3adde753282ad84a8dd3e031cb0a3684a64480899"
-    sha256 cellar: :any_skip_relocation, ventura:        "46ee29ec03c0afe9771509dbf86a54d2410d87257092ded531bb34998da4c7d4"
-    sha256 cellar: :any_skip_relocation, monterey:       "a7edef9ce2b2c169c7d5d10e3dde4e611dc3a3c6af72a6147164256e2e7f1ac2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "473192d7dea04d61b703fd0f463c52bb5fc08ad68062e49973cd235b87bbcad0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5afaea56968d2d751edb71a448e50b4cf9877d7fca52b8a4bc674b173d45057b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10968d29f2797b9bc1c527735e689a2e68f0d0e3cfb4f7384d0d4273ad63963f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e863d0997ff9765a967e7e3f5927fc97e34495fa30e5b47b30abe531cd18a575"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cc9bf914ed4a92ec5b14085c5440c0fe2056ad63550b922fcf0059aa4bf84046"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f4c546247f6d54bd44441b25004e27b0742cc787babcc9ce32ac0e18935136c"
+    sha256 cellar: :any_skip_relocation, monterey:       "827ef59765895c1c6a3e0502bcb7bc0474c22ae40515f55020d3998a92f5a690"
+    sha256 cellar: :any_skip_relocation, big_sur:        "256ba111c641c669d1905cc23821ce0263b420e7981e8fc1b3f65f03981513cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "714a82f4ff2625998868974f9069ceb55f0933dfacdb2e3ddfe0f2dbee675205"
   end
 
   depends_on "cmake" => :build

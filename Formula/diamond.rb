@@ -1,19 +1,18 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
   homepage "https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/diamond/"
-  url "https://github.com/bbuchfink/diamond/archive/v2.0.15.tar.gz"
-  sha256 "cc8e1f3fd357d286cf6585b21321bd25af69aae16ae1a8f605ea603c1886ffa4"
+  url "https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.5.tar.gz"
+  sha256 "29726e72f65cf2d8a3c183d858ce497ddc26cb1c9e09957f109da09669d3f718"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29b72714b65599913d889c6ce97b64a9a40fd453d00f3cb58be9f45974ff8d6d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1e1daedcd1ea44e29b70859d57bcd6f0983b9d38ac27f32e63b1072002f452c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa0e405531a810c30e7e86414dd6bc5a1a3d362af243329008623c703134dafb"
-    sha256 cellar: :any_skip_relocation, ventura:        "e11d1f81fbf3a6a664d6b3e435e96e43eb701e5d95bd2bd81eef5fa2f9168b7e"
-    sha256 cellar: :any_skip_relocation, monterey:       "63dd3620cc1447aeb81b99e636301489ca6d2d3ba6a42f7c3c3432eacf82539b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "619e8ff1bbfe88b3336831c3f324ba076461cdbc5a9cf8638d510ca0bf1a9dd3"
-    sha256 cellar: :any_skip_relocation, catalina:       "392f3045b0972f2ec771f1afd3349da404e0f083b57115dc093125247d22e5db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c3558c6daf8a9f202cc9c1ae5081aef8a5671f4b0879229e6b6d1e886fb91ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ae0330c69fc066b3521e5d5fa2d90adbb64888ce4d9addf5f52776f812101bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "093110045b8af53e233a9dc2e8be6de76fd0c6e81636b5be16eb7dd50b6001b6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1440861e321fd91e9f9fb61ae3384df1be3ceab61cb48ec50fa1f7f7a8002b13"
+    sha256 cellar: :any_skip_relocation, ventura:        "a7f04638a75b7c3a371c841fea0837e5d159ff2f5d1b83fe28f585d47d5c841a"
+    sha256 cellar: :any_skip_relocation, monterey:       "8996b463b22328d10fc79e28bf13ac9bf807b18c640df41df6e1918ac94ddfd1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3d821c847c43b3897c422205d7bc053c80d416dfbe93ea025f238cb5dd92a0b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "292565d4c5219a132833f7579f5c21f1bc8a7c11582b81c349f7b2a6e8a516f9"
   end
 
   depends_on "cmake" => :build

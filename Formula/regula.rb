@@ -2,19 +2,19 @@ class Regula < Formula
   desc "Checks infrastructure as code templates using Open Policy Agent/Rego"
   homepage "https://regula.dev/"
   url "https://github.com/fugue/regula.git",
-      tag:      "v3.1.0",
-      revision: "0f4961dfb17ae33f5a4f22885dc9c3c3c651b551"
+      tag:      "v3.2.1",
+      revision: "fed1e441b187504a5928e2999a6210b88279139c"
   license "Apache-2.0"
   head "https://github.com/fugue/regula.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31f9d8242642d1733d8bd3acb61adea884ee2b37d3981c3606200fddca7421b9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4e0adc0e9550e43d71519691e1e1fd1ba21d7d2e4d3c9b63491312664c25b14"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc0804d7530f5c9389d2061b6ec87a33e42ffbd337ce106049c01d1442387349"
-    sha256 cellar: :any_skip_relocation, ventura:        "bda8376ba986f076c0ffd1056fa8c8d7bdf4c72a51d2b6c546296affbc4ef9b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "db8e932d775b73de60ba612a4e7c91cc952ed71adf7ecd2f7772831b86460fae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb4ad0d0b4648d76ff5cd7564b50e724b0060a00b179f3403e343d18c33430c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41627eacebff5f87a7e56a732650987f6db6710b3bd04e04fc8e714a9772050c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32955fbf11b6316c1d6af6bb53227567d76ec5d2c2afa72893eece0c861d7be8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c00dfdde9f6e15f5adcbff029615ef21121b0a08c3c05c722287806472b8488a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45925ecaa81eebd2a4cc53d0547a0d02172b3196a281ec08d643efe9d62f0c32"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ad82b75e4b823e3335d3c1d2174a95b57b747d17da1fc69fba2a091dae4e98e"
+    sha256 cellar: :any_skip_relocation, monterey:       "308470d3a43ce5fe69448da81d00e51c09b9d42ed299c9bf5a08619eedc305aa"
+    sha256 cellar: :any_skip_relocation, big_sur:        "29c286e8ac38c7f7b2bcc912a406b40ad480e778ee25f7d5422f35e11deacb77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abbb2a4a62e5c18d4a2ecfb9c34fa98ff7d93b5275d0b288482fa65379978cd7"
   end
 
   depends_on "go" => :build
